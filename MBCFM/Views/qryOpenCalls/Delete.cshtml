@@ -1,0 +1,72 @@
+﻿@model MBCFM.Models.qryOpenCall
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>qryOpenCall</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Client_Job_No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client_Job_No)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siteName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siteName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Priority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Priority)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.currentStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.currentStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubContractor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubContractor)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

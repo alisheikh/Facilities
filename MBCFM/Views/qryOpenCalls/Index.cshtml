@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MBCFM.Models.qryOpenCall>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Client_Job_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.siteName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Priority)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.currentStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubContractor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client_Job_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.siteName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Priority)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.currentStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubContractor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MBC_Job_No }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MBC_Job_No }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MBC_Job_No })
+        </td>
+    </tr>
+}
+
+</table>

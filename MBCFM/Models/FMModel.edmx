@@ -1,0 +1,1328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FMHelpdeskSQLV4Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="callOutFee">
+          <Key>
+            <PropertyRef Name="callOutFee" />
+          </Key>
+          <Property Name="callOutFee" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="callOutRate">
+          <Key>
+            <PropertyRef Name="rate" />
+          </Key>
+          <Property Name="rate" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Current Status">
+          <Key>
+            <PropertyRef Name="currentStatus" />
+          </Key>
+          <Property Name="currentStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FMIncidents">
+          <Key>
+            <PropertyRef Name="MBC Job No" />
+          </Key>
+          <Property Name="MBC Job No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Client Job No" Type="nvarchar" MaxLength="50" />
+          <Property Name="SiteNo" Type="nvarchar" MaxLength="200" />
+          <Property Name="OrderType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Trade" Type="nvarchar" MaxLength="50" />
+          <Property Name="EnteredBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="ReportedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="SiteTelNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateOpened" Type="datetime" />
+          <Property Name="Priority" Type="int" />
+          <Property Name="ResponseTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="RequiredBy" Type="datetime" />
+          <Property Name="DateClosed" Type="datetime" />
+          <Property Name="SubContractor" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="ntext" />
+          <Property Name="AddNewNotes" Type="ntext" />
+          <Property Name="Problem" Type="ntext" />
+          <Property Name="todaysDate" Type="datetime" />
+          <Property Name="timeOnSite" Type="datetime" />
+          <Property Name="timeOffSite" Type="datetime" />
+          <Property Name="materials" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="labour" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totalCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="currentStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="costingNotes" Type="ntext" />
+          <Property Name="subContractorMaterials" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorlabour" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorcosts" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorOverheads" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorProfit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorTotal" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="siteName" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteAddress2" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteStreet" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteTown" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteCounty" Type="nvarchar" MaxLength="50" />
+          <Property Name="sitePostCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Invoiced" Type="nvarchar" MaxLength="50" />
+          <Property Name="jobLimits" Type="nvarchar" MaxLength="50" />
+          <Property Name="estimatedTimeOfCompletion" Type="nvarchar" MaxLength="255" />
+          <Property Name="UpliftApprovedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="totalTimeOnSite" Type="datetime" />
+          <Property Name="overHeads" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="materialsProfit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="profitOnPlant" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="jobSheetSigned" Type="bit" />
+          <Property Name="callOutRate" Type="int" />
+          <Property Name="initialCallOut" Type="nvarchar" MaxLength="255" />
+          <Property Name="callOutFee" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totalToInvoice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="siteAllocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="subContractorInvoiceNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="subContractorInvoiceDate" Type="date" />
+          <Property Name="subContractorInvoicePaid" Type="nvarchar" MaxLength="50" />
+          <Property Name="quotationDated" Type="datetime" />
+          <Property Name="quotationApprovedDate" Type="datetime" />
+          <Property Name="timeOnSite2" Type="datetime" />
+          <Property Name="timeOffSite2" Type="datetime" />
+          <Property Name="timeOnSite3" Type="datetime" />
+          <Property Name="timeOffSite3" Type="datetime" />
+          <Property Name="timeOnSite4" Type="datetime" />
+          <Property Name="timeOffSite4" Type="datetime" />
+          <Property Name="siteNotes" Type="ntext" />
+          <Property Name="addSiteNotes" Type="ntext" />
+        </EntityType>
+        <EntityType Name="FMIncidentsFM261">
+          <Key>
+            <PropertyRef Name="MBC Job No" />
+          </Key>
+          <Property Name="MBC Job No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Client Job No" Type="nvarchar" MaxLength="50" />
+          <Property Name="SiteNo" Type="nvarchar" MaxLength="200" />
+          <Property Name="OrderType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Trade" Type="nvarchar" MaxLength="50" />
+          <Property Name="EnteredBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="ReportedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="SiteTelNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateOpened" Type="datetime" />
+          <Property Name="Priority" Type="int" />
+          <Property Name="ResponseTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="RequiredBy" Type="datetime" />
+          <Property Name="DateClosed" Type="datetime" />
+          <Property Name="SubContractor" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="ntext" />
+          <Property Name="AddNewNotes" Type="ntext" />
+          <Property Name="Problem" Type="ntext" />
+          <Property Name="todaysDate" Type="datetime" />
+          <Property Name="timeOnSite" Type="datetime" />
+          <Property Name="timeOffSite" Type="datetime" />
+          <Property Name="materials" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="labour" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="currentStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="costingNotes" Type="ntext" />
+          <Property Name="subContractorMaterials" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorlabour" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorcosts" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorOverheads" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorProfit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorTotal" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="siteName" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteAddress2" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteStreet" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteTown" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteCounty" Type="nvarchar" MaxLength="50" />
+          <Property Name="sitePostCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Invoiced" Type="nvarchar" MaxLength="50" />
+          <Property Name="jobLimits" Type="nvarchar" MaxLength="50" />
+          <Property Name="estimatedTimeOfCompletion" Type="nvarchar" MaxLength="255" />
+          <Property Name="UpliftApprovedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="totalTimeOnSite" Type="datetime" />
+          <Property Name="overHeads" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="materialsProfit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="profitOnPlant" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="jobSheetSigned" Type="bit" />
+          <Property Name="callOutRate" Type="int" />
+          <Property Name="initialCallOut" Type="nvarchar" MaxLength="255" />
+          <Property Name="callOutFee" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totalToInvoice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="siteAllocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="subContractorInvoiceNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="subContractorInvoiceDate" Type="date" />
+          <Property Name="subContractorInvoicePaid" Type="nvarchar" MaxLength="50" />
+          <Property Name="quotationDated" Type="datetime" />
+          <Property Name="quotationApprovedDate" Type="datetime" />
+          <Property Name="timeOnSite2" Type="datetime" />
+          <Property Name="timeOffSite2" Type="datetime" />
+          <Property Name="timeOnSite3" Type="datetime" />
+          <Property Name="timeOffSite3" Type="datetime" />
+          <Property Name="timeOnSite4" Type="datetime" />
+          <Property Name="timeOffSite4" Type="datetime" />
+          <Property Name="siteNotes" Type="ntext" />
+          <Property Name="addSiteNotes" Type="ntext" />
+          <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="initialCallOut">
+          <Key>
+            <PropertyRef Name="initialCallOut" />
+          </Key>
+          <Property Name="initialCallOut" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="jobLimits">
+          <Key>
+            <PropertyRef Name="joblimits" />
+          </Key>
+          <Property Name="joblimits" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="little_chef">
+          <Key>
+            <PropertyRef Name="MBC Job No" />
+          </Key>
+          <Property Name="MBC Job No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Client Job No" Type="nvarchar" MaxLength="50" />
+          <Property Name="JobAddress" Type="nvarchar" MaxLength="200" />
+          <Property Name="OrderType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Trade" Type="nvarchar" MaxLength="50" />
+          <Property Name="EnteredBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReportedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Client" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateOpened" Type="datetime" />
+          <Property Name="Priority" Type="int" />
+          <Property Name="ResponseTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="RequiredBy" Type="datetime" />
+          <Property Name="DateClosed" Type="datetime" />
+          <Property Name="SubContractor" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="ntext" />
+          <Property Name="AddNewNotes" Type="ntext" />
+          <Property Name="Problem" Type="nvarchar" MaxLength="255" />
+          <Property Name="todaysDate" Type="datetime" />
+          <Property Name="timeOnSite" Type="nvarchar" MaxLength="50" />
+          <Property Name="timeOffSite" Type="nvarchar" MaxLength="50" />
+          <Property Name="materials" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="labour" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totalCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="currentStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="costingNotes" Type="ntext" />
+          <Property Name="subContractorMaterials" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorlabour" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorcosts" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="siteName" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteAddress2" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteStreet" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteTown" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteCounty" Type="nvarchar" MaxLength="50" />
+          <Property Name="sitePostCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Invoiced" Type="nvarchar" MaxLength="50" />
+          <Property Name="jobLimits" Type="nvarchar" MaxLength="50" />
+          <Property Name="InvoiceAddress" Type="ntext" />
+          <Property Name="sitePhone" Type="nchar" MaxLength="50" />
+          <Property Name="invoiceTotal" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="materialsProfit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorProfit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorInvoiceNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="subContractorInvoiceDate" Type="datetime" />
+          <Property Name="subContractorInvoicePaid" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Order Type">
+          <Key>
+            <PropertyRef Name="ordertype" />
+          </Key>
+          <Property Name="ordertype" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="primaryCallOutFee">
+          <Key>
+            <PropertyRef Name="callOutFee" />
+          </Key>
+          <Property Name="callOutFee" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Priority">
+          <Key>
+            <PropertyRef Name="priority" />
+          </Key>
+          <Property Name="priority" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReActiveAddresses">
+          <Key>
+            <PropertyRef Name="JobAddress" />
+          </Key>
+          <Property Name="JobAddress" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address3" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address4" Type="nvarchar" MaxLength="255" />
+          <Property Name="Town/City" Type="nvarchar" MaxLength="255" />
+          <Property Name="County" Type="nvarchar" MaxLength="255" />
+          <Property Name="Post Code" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="reactiveCallOut">
+          <Key>
+            <PropertyRef Name="MBC Job No" />
+          </Key>
+          <Property Name="MBC Job No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Client Job No" Type="nvarchar" MaxLength="50" />
+          <Property Name="JobAddress" Type="nvarchar" MaxLength="200" />
+          <Property Name="OrderType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Trade" Type="nvarchar" MaxLength="50" />
+          <Property Name="EnteredBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReportedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Client" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateOpened" Type="datetime" />
+          <Property Name="Priority" Type="int" />
+          <Property Name="ResponseTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="RequiredBy" Type="datetime" />
+          <Property Name="DateClosed" Type="datetime" />
+          <Property Name="SubContractor" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="nvarchar(max)" />
+          <Property Name="AddNewNotes" Type="nvarchar(max)" />
+          <Property Name="Problem" Type="nvarchar(max)" />
+          <Property Name="todaysDate" Type="datetime" />
+          <Property Name="timeOnSite" Type="nvarchar" MaxLength="50" />
+          <Property Name="timeOffSite" Type="nvarchar" MaxLength="50" />
+          <Property Name="materials" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="labour" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totalCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="currentStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="costingNotes" Type="nvarchar(max)" />
+          <Property Name="subContractorMaterials" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorlabour" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorcosts" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="siteName" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteAddress2" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteStreet" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteTown" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteCounty" Type="nvarchar" MaxLength="50" />
+          <Property Name="sitePostCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Invoiced" Type="nvarchar" MaxLength="50" />
+          <Property Name="jobLimits" Type="nvarchar" MaxLength="50" />
+          <Property Name="InvoiceAddress" Type="nvarchar(max)" />
+          <Property Name="sitePhone" Type="nchar" MaxLength="50" />
+          <Property Name="invoiceTotal" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="materialsProfit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorProfit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorInvoiceNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="subContractorInvoiceDate" Type="datetime" />
+          <Property Name="subContractorInvoicePaid" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ResponseTime">
+          <Key>
+            <PropertyRef Name="ResponseTime" />
+          </Key>
+          <Property Name="ResponseTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="secondaryCallOutFee">
+          <Key>
+            <PropertyRef Name="callOutFee" />
+          </Key>
+          <Property Name="callOutFee" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subcontractor">
+          <Key>
+            <PropertyRef Name="SubContractor" />
+          </Key>
+          <Property Name="SubContractor" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Town/City" Type="nvarchar" MaxLength="255" />
+          <Property Name="County" Type="nvarchar" MaxLength="255" />
+          <Property Name="PostCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="Email Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="Phone No" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Switchboard Items">
+          <Key>
+            <PropertyRef Name="SwitchboardID" />
+            <PropertyRef Name="ItemNumber" />
+          </Key>
+          <Property Name="SwitchboardID" Type="int" Nullable="false" />
+          <Property Name="ItemNumber" Type="smallint" Nullable="false" />
+          <Property Name="ItemText" Type="nvarchar" MaxLength="255" />
+          <Property Name="Command" Type="smallint" />
+          <Property Name="Argument" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Travelodge">
+          <Key>
+            <PropertyRef Name="SiteNo" />
+          </Key>
+          <Property Name="SiteNo" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address3" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address4" Type="nvarchar" MaxLength="255" />
+          <Property Name="Town/City" Type="nvarchar" MaxLength="255" />
+          <Property Name="County" Type="nvarchar" MaxLength="255" />
+          <Property Name="Post Code" Type="nvarchar" MaxLength="255" />
+          <Property Name="Allocation" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="enteredby" />
+          </Key>
+          <Property Name="enteredby" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FMHelpdeskSQLV4.dbo.openCallsKevinDaley' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="openCallsKevinDaley"> 
+          <Key>
+            <PropertyRef Name="MBC Job No" />
+          </Key>
+          <Property Name="MBC Job No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Client Job No" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Priority" Type="int" />
+          <Property Name="OrderType" Type="nvarchar" MaxLength="50" />
+          <Property Name="currentStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubContractor" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FMHelpdeskSQLV4.dbo.qryOpenCalls' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="qryOpenCalls">
+          <Key>
+            <PropertyRef Name="MBC Job No" />
+          </Key>
+          <Property Name="MBC Job No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Client Job No" Type="nvarchar" MaxLength="50" />
+          <Property Name="siteName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Priority" Type="int" />
+          <Property Name="OrderType" Type="nvarchar" MaxLength="50" />
+          <Property Name="currentStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubContractor" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="FMHelpdeskSQLV4ModelStoreContainer">
+          <EntitySet Name="callOutFee" EntityType="Self.callOutFee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="callOutRate" EntityType="Self.callOutRate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Current Status" EntityType="Self.Current Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FMIncidents" EntityType="Self.FMIncidents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FMIncidentsFM261" EntityType="Self.FMIncidentsFM261" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="initialCallOut" EntityType="Self.initialCallOut" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="jobLimits" EntityType="Self.jobLimits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="little_chef" EntityType="Self.little_chef" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order Type" EntityType="Self.Order Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="primaryCallOutFee" EntityType="Self.primaryCallOutFee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Priority" EntityType="Self.Priority" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReActiveAddresses" EntityType="Self.ReActiveAddresses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="reactiveCallOut" EntityType="Self.reactiveCallOut" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResponseTime" EntityType="Self.ResponseTime" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="secondaryCallOutFee" EntityType="Self.secondaryCallOutFee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subcontractor" EntityType="Self.Subcontractor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Switchboard Items" EntityType="Self.Switchboard Items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Travelodge" EntityType="Self.Travelodge" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="openCallsKevinDaley" EntityType="Self.openCallsKevinDaley" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [openCallsKevinDaley].[MBC Job No] AS [MBC Job No], 
+    [openCallsKevinDaley].[Client Job No] AS [Client Job No], 
+    [openCallsKevinDaley].[siteName] AS [siteName], 
+    [openCallsKevinDaley].[Priority] AS [Priority], 
+    [openCallsKevinDaley].[OrderType] AS [OrderType], 
+    [openCallsKevinDaley].[currentStatus] AS [currentStatus], 
+    [openCallsKevinDaley].[SubContractor] AS [SubContractor]
+    FROM [dbo].[openCallsKevinDaley] AS [openCallsKevinDaley]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="qryOpenCalls" EntityType="Self.qryOpenCalls" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [qryOpenCalls].[MBC Job No] AS [MBC Job No], 
+    [qryOpenCalls].[Client Job No] AS [Client Job No], 
+    [qryOpenCalls].[siteName] AS [siteName], 
+    [qryOpenCalls].[Priority] AS [Priority], 
+    [qryOpenCalls].[OrderType] AS [OrderType], 
+    [qryOpenCalls].[currentStatus] AS [currentStatus], 
+    [qryOpenCalls].[SubContractor] AS [SubContractor]
+    FROM [dbo].[qryOpenCalls] AS [qryOpenCalls]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FMHelpdeskSQLV4Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="callOutFee">
+          <Key>
+            <PropertyRef Name="callOutFee1" />
+          </Key>
+          <Property Name="callOutFee1" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="callOutRate">
+          <Key>
+            <PropertyRef Name="rate" />
+          </Key>
+          <Property Name="rate" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Current_Status">
+          <Key>
+            <PropertyRef Name="currentStatus" />
+          </Key>
+          <Property Name="currentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FMIncident">
+          <Key>
+            <PropertyRef Name="MBC_Job_No" />
+          </Key>
+          <Property Name="MBC_Job_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Client_Job_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SiteNo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OrderType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Trade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EnteredBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="ReportedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SiteTelNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateOpened" Type="DateTime" Precision="3" />
+          <Property Name="Priority" Type="Int32" />
+          <Property Name="ResponseTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RequiredBy" Type="DateTime" Precision="3" />
+          <Property Name="DateClosed" Type="DateTime" Precision="3" />
+          <Property Name="SubContractor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddNewNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Problem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="todaysDate" Type="DateTime" Precision="3" />
+          <Property Name="timeOnSite" Type="DateTime" Precision="3" />
+          <Property Name="timeOffSite" Type="DateTime" Precision="3" />
+          <Property Name="materials" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="labour" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totalCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="currentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="costingNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="subContractorMaterials" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorlabour" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorcosts" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorOverheads" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorProfit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorTotal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="siteName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteAddress2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteStreet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteTown" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteCounty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sitePostCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Invoiced" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="jobLimits" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="estimatedTimeOfCompletion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UpliftApprovedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="totalTimeOnSite" Type="DateTime" Precision="3" />
+          <Property Name="overHeads" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="materialsProfit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="profitOnPlant" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="jobSheetSigned" Type="Boolean" />
+          <Property Name="callOutRate" Type="Int32" />
+          <Property Name="initialCallOut" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="callOutFee" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totalToInvoice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="siteAllocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subContractorInvoiceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subContractorInvoiceDate" Type="DateTime" Precision="0" />
+          <Property Name="subContractorInvoicePaid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="quotationDated" Type="DateTime" Precision="3" />
+          <Property Name="quotationApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="timeOnSite2" Type="DateTime" Precision="3" />
+          <Property Name="timeOffSite2" Type="DateTime" Precision="3" />
+          <Property Name="timeOnSite3" Type="DateTime" Precision="3" />
+          <Property Name="timeOffSite3" Type="DateTime" Precision="3" />
+          <Property Name="timeOnSite4" Type="DateTime" Precision="3" />
+          <Property Name="timeOffSite4" Type="DateTime" Precision="3" />
+          <Property Name="siteNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="addSiteNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FMIncidentsFM261">
+          <Key>
+            <PropertyRef Name="MBC_Job_No" />
+          </Key>
+          <Property Name="MBC_Job_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Client_Job_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SiteNo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OrderType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Trade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EnteredBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="ReportedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SiteTelNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateOpened" Type="DateTime" Precision="3" />
+          <Property Name="Priority" Type="Int32" />
+          <Property Name="ResponseTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RequiredBy" Type="DateTime" Precision="3" />
+          <Property Name="DateClosed" Type="DateTime" Precision="3" />
+          <Property Name="SubContractor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddNewNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Problem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="todaysDate" Type="DateTime" Precision="3" />
+          <Property Name="timeOnSite" Type="DateTime" Precision="3" />
+          <Property Name="timeOffSite" Type="DateTime" Precision="3" />
+          <Property Name="materials" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="labour" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="currentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="costingNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="subContractorMaterials" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorlabour" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorcosts" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorOverheads" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorProfit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorTotal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="siteName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteAddress2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteStreet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteTown" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteCounty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sitePostCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Invoiced" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="jobLimits" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="estimatedTimeOfCompletion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UpliftApprovedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="totalTimeOnSite" Type="DateTime" Precision="3" />
+          <Property Name="overHeads" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="materialsProfit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="profitOnPlant" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="jobSheetSigned" Type="Boolean" />
+          <Property Name="callOutRate" Type="Int32" />
+          <Property Name="initialCallOut" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="callOutFee" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totalToInvoice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="siteAllocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subContractorInvoiceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subContractorInvoiceDate" Type="DateTime" Precision="0" />
+          <Property Name="subContractorInvoicePaid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="quotationDated" Type="DateTime" Precision="3" />
+          <Property Name="quotationApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="timeOnSite2" Type="DateTime" Precision="3" />
+          <Property Name="timeOffSite2" Type="DateTime" Precision="3" />
+          <Property Name="timeOnSite3" Type="DateTime" Precision="3" />
+          <Property Name="timeOffSite3" Type="DateTime" Precision="3" />
+          <Property Name="timeOnSite4" Type="DateTime" Precision="3" />
+          <Property Name="timeOffSite4" Type="DateTime" Precision="3" />
+          <Property Name="siteNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="addSiteNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="initialCallOut">
+          <Key>
+            <PropertyRef Name="initialCallOut1" />
+          </Key>
+          <Property Name="initialCallOut1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="jobLimit">
+          <Key>
+            <PropertyRef Name="joblimits" />
+          </Key>
+          <Property Name="joblimits" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="little_chef">
+          <Key>
+            <PropertyRef Name="MBC_Job_No" />
+          </Key>
+          <Property Name="MBC_Job_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Client_Job_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JobAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OrderType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Trade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EnteredBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReportedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Client" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateOpened" Type="DateTime" Precision="3" />
+          <Property Name="Priority" Type="Int32" />
+          <Property Name="ResponseTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RequiredBy" Type="DateTime" Precision="3" />
+          <Property Name="DateClosed" Type="DateTime" Precision="3" />
+          <Property Name="SubContractor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddNewNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Problem" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="todaysDate" Type="DateTime" Precision="3" />
+          <Property Name="timeOnSite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="timeOffSite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="materials" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="labour" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totalCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="currentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="costingNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="subContractorMaterials" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorlabour" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorcosts" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="siteName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteAddress2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteStreet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteTown" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteCounty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sitePostCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Invoiced" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="jobLimits" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sitePhone" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="invoiceTotal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="materialsProfit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorProfit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorInvoiceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subContractorInvoiceDate" Type="DateTime" Precision="3" />
+          <Property Name="subContractorInvoicePaid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Order_Type">
+          <Key>
+            <PropertyRef Name="ordertype" />
+          </Key>
+          <Property Name="ordertype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="primaryCallOutFee">
+          <Key>
+            <PropertyRef Name="callOutFee" />
+          </Key>
+          <Property Name="callOutFee" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Priority">
+          <Key>
+            <PropertyRef Name="priority1" />
+          </Key>
+          <Property Name="priority1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReActiveAddress">
+          <Key>
+            <PropertyRef Name="JobAddress" />
+          </Key>
+          <Property Name="JobAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Town_City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="County" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Post_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ResponseTime">
+          <Key>
+            <PropertyRef Name="ResponseTime1" />
+          </Key>
+          <Property Name="ResponseTime1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="secondaryCallOutFee">
+          <Key>
+            <PropertyRef Name="callOutFee" />
+          </Key>
+          <Property Name="callOutFee" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subcontractor">
+          <Key>
+            <PropertyRef Name="SubContractor1" />
+          </Key>
+          <Property Name="SubContractor1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Town_City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="County" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PostCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Email_Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_No" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Switchboard_Item">
+          <Key>
+            <PropertyRef Name="SwitchboardID" />
+            <PropertyRef Name="ItemNumber" />
+          </Key>
+          <Property Name="SwitchboardID" Type="Int32" Nullable="false" />
+          <Property Name="ItemNumber" Type="Int16" Nullable="false" />
+          <Property Name="ItemText" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Command" Type="Int16" />
+          <Property Name="Argument" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Travelodge">
+          <Key>
+            <PropertyRef Name="SiteNo" />
+          </Key>
+          <Property Name="SiteNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Town_City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="County" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Post_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Allocation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="enteredby" />
+          </Key>
+          <Property Name="enteredby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="reactiveCallOut">
+          <Key>
+            <PropertyRef Name="MBC_Job_No" />
+          </Key>
+          <Property Name="MBC_Job_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Client_Job_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JobAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OrderType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Trade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EnteredBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReportedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Client" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateOpened" Type="DateTime" Precision="3" />
+          <Property Name="Priority" Type="Int32" />
+          <Property Name="ResponseTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RequiredBy" Type="DateTime" Precision="3" />
+          <Property Name="DateClosed" Type="DateTime" Precision="3" />
+          <Property Name="SubContractor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddNewNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Problem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="todaysDate" Type="DateTime" Precision="3" />
+          <Property Name="timeOnSite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="timeOffSite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="materials" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="labour" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totalCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="currentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="costingNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="subContractorMaterials" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorlabour" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorcosts" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="siteName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteAddress2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteStreet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteTown" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteCounty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sitePostCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Invoiced" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="jobLimits" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sitePhone" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="invoiceTotal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="materialsProfit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorProfit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="subContractorInvoiceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subContractorInvoiceDate" Type="DateTime" Precision="3" />
+          <Property Name="subContractorInvoicePaid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="FMHelpdeskSQLV4Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="callOutFees" EntityType="Self.callOutFee" />
+          <EntitySet Name="callOutRates" EntityType="Self.callOutRate" />
+          <EntitySet Name="Current_Status" EntityType="Self.Current_Status" />
+          <EntitySet Name="FMIncidents" EntityType="Self.FMIncident" />
+          <EntitySet Name="FMIncidentsFM261" EntityType="Self.FMIncidentsFM261" />
+          <EntitySet Name="initialCallOuts" EntityType="Self.initialCallOut" />
+          <EntitySet Name="jobLimits" EntityType="Self.jobLimit" />
+          <EntitySet Name="little_chef" EntityType="Self.little_chef" />
+          <EntitySet Name="Order_Types" EntityType="Self.Order_Type" />
+          <EntitySet Name="primaryCallOutFees" EntityType="Self.primaryCallOutFee" />
+          <EntitySet Name="Priorities" EntityType="Self.Priority" />
+          <EntitySet Name="ReActiveAddresses" EntityType="Self.ReActiveAddress" />
+          <EntitySet Name="ResponseTimes" EntityType="Self.ResponseTime" />
+          <EntitySet Name="secondaryCallOutFees" EntityType="Self.secondaryCallOutFee" />
+          <EntitySet Name="Subcontractors" EntityType="Self.Subcontractor" />
+          <EntitySet Name="Switchboard_Items" EntityType="Self.Switchboard_Item" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Travelodges" EntityType="Self.Travelodge" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="reactiveCallOuts" EntityType="Self.reactiveCallOut" />
+          <EntitySet Name="qryOpenCalls" EntityType="FMHelpdeskSQLV4Model.qryOpenCall" />
+          <EntitySet Name="openCallsKevinDaleys" EntityType="FMHelpdeskSQLV4Model.openCallsKevinDaley" />
+        </EntityContainer>
+        <EntityType Name="qryOpenCall">
+          <Key>
+            <PropertyRef Name="MBC_Job_No" />
+          </Key>
+          <Property Name="MBC_Job_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Client_Job_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Priority" Type="Int32" />
+          <Property Name="OrderType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="currentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubContractor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="openCallsKevinDaley">
+          <Key>
+            <PropertyRef Name="MBC_Job_No" />
+          </Key>
+          <Property Name="MBC_Job_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Client_Job_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="siteName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Priority" Type="Int32" />
+          <Property Name="OrderType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="currentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubContractor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FMHelpdeskSQLV4ModelStoreContainer" CdmEntityContainer="FMHelpdeskSQLV4Entities">
+          <EntitySetMapping Name="callOutFees">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.callOutFee">
+              <MappingFragment StoreEntitySet="callOutFee">
+                <ScalarProperty Name="callOutFee1" ColumnName="callOutFee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="callOutRates">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.callOutRate">
+              <MappingFragment StoreEntitySet="callOutRate">
+                <ScalarProperty Name="rate" ColumnName="rate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Current_Status">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.Current_Status">
+              <MappingFragment StoreEntitySet="Current Status">
+                <ScalarProperty Name="currentStatus" ColumnName="currentStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FMIncidents">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.FMIncident">
+              <MappingFragment StoreEntitySet="FMIncidents">
+                <ScalarProperty Name="MBC_Job_No" ColumnName="MBC Job No" />
+                <ScalarProperty Name="Client_Job_No" ColumnName="Client Job No" />
+                <ScalarProperty Name="SiteNo" ColumnName="SiteNo" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="Trade" ColumnName="Trade" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ReportedBy" ColumnName="ReportedBy" />
+                <ScalarProperty Name="SiteTelNo" ColumnName="SiteTelNo" />
+                <ScalarProperty Name="DateOpened" ColumnName="DateOpened" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="ResponseTime" ColumnName="ResponseTime" />
+                <ScalarProperty Name="RequiredBy" ColumnName="RequiredBy" />
+                <ScalarProperty Name="DateClosed" ColumnName="DateClosed" />
+                <ScalarProperty Name="SubContractor" ColumnName="SubContractor" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="AddNewNotes" ColumnName="AddNewNotes" />
+                <ScalarProperty Name="Problem" ColumnName="Problem" />
+                <ScalarProperty Name="todaysDate" ColumnName="todaysDate" />
+                <ScalarProperty Name="timeOnSite" ColumnName="timeOnSite" />
+                <ScalarProperty Name="timeOffSite" ColumnName="timeOffSite" />
+                <ScalarProperty Name="materials" ColumnName="materials" />
+                <ScalarProperty Name="labour" ColumnName="labour" />
+                <ScalarProperty Name="totalCost" ColumnName="totalCost" />
+                <ScalarProperty Name="currentStatus" ColumnName="currentStatus" />
+                <ScalarProperty Name="costingNotes" ColumnName="costingNotes" />
+                <ScalarProperty Name="subContractorMaterials" ColumnName="subContractorMaterials" />
+                <ScalarProperty Name="subContractorlabour" ColumnName="subContractorlabour" />
+                <ScalarProperty Name="subContractorcosts" ColumnName="subContractorcosts" />
+                <ScalarProperty Name="subContractorOverheads" ColumnName="subContractorOverheads" />
+                <ScalarProperty Name="subContractorProfit" ColumnName="subContractorProfit" />
+                <ScalarProperty Name="subContractorTotal" ColumnName="subContractorTotal" />
+                <ScalarProperty Name="siteName" ColumnName="siteName" />
+                <ScalarProperty Name="siteAddress" ColumnName="siteAddress" />
+                <ScalarProperty Name="siteAddress2" ColumnName="siteAddress2" />
+                <ScalarProperty Name="siteStreet" ColumnName="siteStreet" />
+                <ScalarProperty Name="siteTown" ColumnName="siteTown" />
+                <ScalarProperty Name="siteCounty" ColumnName="siteCounty" />
+                <ScalarProperty Name="sitePostCode" ColumnName="sitePostCode" />
+                <ScalarProperty Name="Invoiced" ColumnName="Invoiced" />
+                <ScalarProperty Name="jobLimits" ColumnName="jobLimits" />
+                <ScalarProperty Name="estimatedTimeOfCompletion" ColumnName="estimatedTimeOfCompletion" />
+                <ScalarProperty Name="UpliftApprovedBy" ColumnName="UpliftApprovedBy" />
+                <ScalarProperty Name="totalTimeOnSite" ColumnName="totalTimeOnSite" />
+                <ScalarProperty Name="overHeads" ColumnName="overHeads" />
+                <ScalarProperty Name="materialsProfit" ColumnName="materialsProfit" />
+                <ScalarProperty Name="profitOnPlant" ColumnName="profitOnPlant" />
+                <ScalarProperty Name="jobSheetSigned" ColumnName="jobSheetSigned" />
+                <ScalarProperty Name="callOutRate" ColumnName="callOutRate" />
+                <ScalarProperty Name="initialCallOut" ColumnName="initialCallOut" />
+                <ScalarProperty Name="callOutFee" ColumnName="callOutFee" />
+                <ScalarProperty Name="totalToInvoice" ColumnName="totalToInvoice" />
+                <ScalarProperty Name="siteAllocation" ColumnName="siteAllocation" />
+                <ScalarProperty Name="subContractorInvoiceNumber" ColumnName="subContractorInvoiceNumber" />
+                <ScalarProperty Name="subContractorInvoiceDate" ColumnName="subContractorInvoiceDate" />
+                <ScalarProperty Name="subContractorInvoicePaid" ColumnName="subContractorInvoicePaid" />
+                <ScalarProperty Name="quotationDated" ColumnName="quotationDated" />
+                <ScalarProperty Name="quotationApprovedDate" ColumnName="quotationApprovedDate" />
+                <ScalarProperty Name="timeOnSite2" ColumnName="timeOnSite2" />
+                <ScalarProperty Name="timeOffSite2" ColumnName="timeOffSite2" />
+                <ScalarProperty Name="timeOnSite3" ColumnName="timeOnSite3" />
+                <ScalarProperty Name="timeOffSite3" ColumnName="timeOffSite3" />
+                <ScalarProperty Name="timeOnSite4" ColumnName="timeOnSite4" />
+                <ScalarProperty Name="timeOffSite4" ColumnName="timeOffSite4" />
+                <ScalarProperty Name="siteNotes" ColumnName="siteNotes" />
+                <ScalarProperty Name="addSiteNotes" ColumnName="addSiteNotes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FMIncidentsFM261">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.FMIncidentsFM261">
+              <MappingFragment StoreEntitySet="FMIncidentsFM261">
+                <ScalarProperty Name="MBC_Job_No" ColumnName="MBC Job No" />
+                <ScalarProperty Name="Client_Job_No" ColumnName="Client Job No" />
+                <ScalarProperty Name="SiteNo" ColumnName="SiteNo" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="Trade" ColumnName="Trade" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ReportedBy" ColumnName="ReportedBy" />
+                <ScalarProperty Name="SiteTelNo" ColumnName="SiteTelNo" />
+                <ScalarProperty Name="DateOpened" ColumnName="DateOpened" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="ResponseTime" ColumnName="ResponseTime" />
+                <ScalarProperty Name="RequiredBy" ColumnName="RequiredBy" />
+                <ScalarProperty Name="DateClosed" ColumnName="DateClosed" />
+                <ScalarProperty Name="SubContractor" ColumnName="SubContractor" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="AddNewNotes" ColumnName="AddNewNotes" />
+                <ScalarProperty Name="Problem" ColumnName="Problem" />
+                <ScalarProperty Name="todaysDate" ColumnName="todaysDate" />
+                <ScalarProperty Name="timeOnSite" ColumnName="timeOnSite" />
+                <ScalarProperty Name="timeOffSite" ColumnName="timeOffSite" />
+                <ScalarProperty Name="materials" ColumnName="materials" />
+                <ScalarProperty Name="labour" ColumnName="labour" />
+                <ScalarProperty Name="totalCost" ColumnName="totalCost" />
+                <ScalarProperty Name="currentStatus" ColumnName="currentStatus" />
+                <ScalarProperty Name="costingNotes" ColumnName="costingNotes" />
+                <ScalarProperty Name="subContractorMaterials" ColumnName="subContractorMaterials" />
+                <ScalarProperty Name="subContractorlabour" ColumnName="subContractorlabour" />
+                <ScalarProperty Name="subContractorcosts" ColumnName="subContractorcosts" />
+                <ScalarProperty Name="subContractorOverheads" ColumnName="subContractorOverheads" />
+                <ScalarProperty Name="subContractorProfit" ColumnName="subContractorProfit" />
+                <ScalarProperty Name="subContractorTotal" ColumnName="subContractorTotal" />
+                <ScalarProperty Name="siteName" ColumnName="siteName" />
+                <ScalarProperty Name="siteAddress" ColumnName="siteAddress" />
+                <ScalarProperty Name="siteAddress2" ColumnName="siteAddress2" />
+                <ScalarProperty Name="siteStreet" ColumnName="siteStreet" />
+                <ScalarProperty Name="siteTown" ColumnName="siteTown" />
+                <ScalarProperty Name="siteCounty" ColumnName="siteCounty" />
+                <ScalarProperty Name="sitePostCode" ColumnName="sitePostCode" />
+                <ScalarProperty Name="Invoiced" ColumnName="Invoiced" />
+                <ScalarProperty Name="jobLimits" ColumnName="jobLimits" />
+                <ScalarProperty Name="estimatedTimeOfCompletion" ColumnName="estimatedTimeOfCompletion" />
+                <ScalarProperty Name="UpliftApprovedBy" ColumnName="UpliftApprovedBy" />
+                <ScalarProperty Name="totalTimeOnSite" ColumnName="totalTimeOnSite" />
+                <ScalarProperty Name="overHeads" ColumnName="overHeads" />
+                <ScalarProperty Name="materialsProfit" ColumnName="materialsProfit" />
+                <ScalarProperty Name="profitOnPlant" ColumnName="profitOnPlant" />
+                <ScalarProperty Name="jobSheetSigned" ColumnName="jobSheetSigned" />
+                <ScalarProperty Name="callOutRate" ColumnName="callOutRate" />
+                <ScalarProperty Name="initialCallOut" ColumnName="initialCallOut" />
+                <ScalarProperty Name="callOutFee" ColumnName="callOutFee" />
+                <ScalarProperty Name="totalToInvoice" ColumnName="totalToInvoice" />
+                <ScalarProperty Name="siteAllocation" ColumnName="siteAllocation" />
+                <ScalarProperty Name="subContractorInvoiceNumber" ColumnName="subContractorInvoiceNumber" />
+                <ScalarProperty Name="subContractorInvoiceDate" ColumnName="subContractorInvoiceDate" />
+                <ScalarProperty Name="subContractorInvoicePaid" ColumnName="subContractorInvoicePaid" />
+                <ScalarProperty Name="quotationDated" ColumnName="quotationDated" />
+                <ScalarProperty Name="quotationApprovedDate" ColumnName="quotationApprovedDate" />
+                <ScalarProperty Name="timeOnSite2" ColumnName="timeOnSite2" />
+                <ScalarProperty Name="timeOffSite2" ColumnName="timeOffSite2" />
+                <ScalarProperty Name="timeOnSite3" ColumnName="timeOnSite3" />
+                <ScalarProperty Name="timeOffSite3" ColumnName="timeOffSite3" />
+                <ScalarProperty Name="timeOnSite4" ColumnName="timeOnSite4" />
+                <ScalarProperty Name="timeOffSite4" ColumnName="timeOffSite4" />
+                <ScalarProperty Name="siteNotes" ColumnName="siteNotes" />
+                <ScalarProperty Name="addSiteNotes" ColumnName="addSiteNotes" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="initialCallOuts">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.initialCallOut">
+              <MappingFragment StoreEntitySet="initialCallOut">
+                <ScalarProperty Name="initialCallOut1" ColumnName="initialCallOut" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="jobLimits">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.jobLimit">
+              <MappingFragment StoreEntitySet="jobLimits">
+                <ScalarProperty Name="joblimits" ColumnName="joblimits" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="little_chef">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.little_chef">
+              <MappingFragment StoreEntitySet="little_chef">
+                <ScalarProperty Name="MBC_Job_No" ColumnName="MBC Job No" />
+                <ScalarProperty Name="Client_Job_No" ColumnName="Client Job No" />
+                <ScalarProperty Name="JobAddress" ColumnName="JobAddress" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="Trade" ColumnName="Trade" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ReportedBy" ColumnName="ReportedBy" />
+                <ScalarProperty Name="Client" ColumnName="Client" />
+                <ScalarProperty Name="DateOpened" ColumnName="DateOpened" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="ResponseTime" ColumnName="ResponseTime" />
+                <ScalarProperty Name="RequiredBy" ColumnName="RequiredBy" />
+                <ScalarProperty Name="DateClosed" ColumnName="DateClosed" />
+                <ScalarProperty Name="SubContractor" ColumnName="SubContractor" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="AddNewNotes" ColumnName="AddNewNotes" />
+                <ScalarProperty Name="Problem" ColumnName="Problem" />
+                <ScalarProperty Name="todaysDate" ColumnName="todaysDate" />
+                <ScalarProperty Name="timeOnSite" ColumnName="timeOnSite" />
+                <ScalarProperty Name="timeOffSite" ColumnName="timeOffSite" />
+                <ScalarProperty Name="materials" ColumnName="materials" />
+                <ScalarProperty Name="labour" ColumnName="labour" />
+                <ScalarProperty Name="totalCost" ColumnName="totalCost" />
+                <ScalarProperty Name="currentStatus" ColumnName="currentStatus" />
+                <ScalarProperty Name="costingNotes" ColumnName="costingNotes" />
+                <ScalarProperty Name="subContractorMaterials" ColumnName="subContractorMaterials" />
+                <ScalarProperty Name="subContractorlabour" ColumnName="subContractorlabour" />
+                <ScalarProperty Name="subContractorcosts" ColumnName="subContractorcosts" />
+                <ScalarProperty Name="siteName" ColumnName="siteName" />
+                <ScalarProperty Name="siteAddress" ColumnName="siteAddress" />
+                <ScalarProperty Name="siteAddress2" ColumnName="siteAddress2" />
+                <ScalarProperty Name="siteStreet" ColumnName="siteStreet" />
+                <ScalarProperty Name="siteTown" ColumnName="siteTown" />
+                <ScalarProperty Name="siteCounty" ColumnName="siteCounty" />
+                <ScalarProperty Name="sitePostCode" ColumnName="sitePostCode" />
+                <ScalarProperty Name="Invoiced" ColumnName="Invoiced" />
+                <ScalarProperty Name="jobLimits" ColumnName="jobLimits" />
+                <ScalarProperty Name="InvoiceAddress" ColumnName="InvoiceAddress" />
+                <ScalarProperty Name="sitePhone" ColumnName="sitePhone" />
+                <ScalarProperty Name="invoiceTotal" ColumnName="invoiceTotal" />
+                <ScalarProperty Name="materialsProfit" ColumnName="materialsProfit" />
+                <ScalarProperty Name="subContractorProfit" ColumnName="subContractorProfit" />
+                <ScalarProperty Name="subContractorInvoiceNumber" ColumnName="subContractorInvoiceNumber" />
+                <ScalarProperty Name="subContractorInvoiceDate" ColumnName="subContractorInvoiceDate" />
+                <ScalarProperty Name="subContractorInvoicePaid" ColumnName="subContractorInvoicePaid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_Types">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.Order_Type">
+              <MappingFragment StoreEntitySet="Order Type">
+                <ScalarProperty Name="ordertype" ColumnName="ordertype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="primaryCallOutFees">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.primaryCallOutFee">
+              <MappingFragment StoreEntitySet="primaryCallOutFee">
+                <ScalarProperty Name="callOutFee" ColumnName="callOutFee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Priorities">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.Priority">
+              <MappingFragment StoreEntitySet="Priority">
+                <ScalarProperty Name="priority1" ColumnName="priority" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReActiveAddresses">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.ReActiveAddress">
+              <MappingFragment StoreEntitySet="ReActiveAddresses">
+                <ScalarProperty Name="JobAddress" ColumnName="JobAddress" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address3" ColumnName="Address3" />
+                <ScalarProperty Name="Address4" ColumnName="Address4" />
+                <ScalarProperty Name="Town_City" ColumnName="Town/City" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="Post_Code" ColumnName="Post Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResponseTimes">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.ResponseTime">
+              <MappingFragment StoreEntitySet="ResponseTime">
+                <ScalarProperty Name="ResponseTime1" ColumnName="ResponseTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="secondaryCallOutFees">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.secondaryCallOutFee">
+              <MappingFragment StoreEntitySet="secondaryCallOutFee">
+                <ScalarProperty Name="callOutFee" ColumnName="callOutFee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subcontractors">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.Subcontractor">
+              <MappingFragment StoreEntitySet="Subcontractor">
+                <ScalarProperty Name="SubContractor1" ColumnName="SubContractor" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Town_City" ColumnName="Town/City" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="Email_Address" ColumnName="Email Address" />
+                <ScalarProperty Name="Phone_No" ColumnName="Phone No" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Switchboard_Items">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.Switchboard_Item">
+              <MappingFragment StoreEntitySet="Switchboard Items">
+                <ScalarProperty Name="SwitchboardID" ColumnName="SwitchboardID" />
+                <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
+                <ScalarProperty Name="ItemText" ColumnName="ItemText" />
+                <ScalarProperty Name="Command" ColumnName="Command" />
+                <ScalarProperty Name="Argument" ColumnName="Argument" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Travelodges">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.Travelodge">
+              <MappingFragment StoreEntitySet="Travelodge">
+                <ScalarProperty Name="SiteNo" ColumnName="SiteNo" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address3" ColumnName="Address3" />
+                <ScalarProperty Name="Address4" ColumnName="Address4" />
+                <ScalarProperty Name="Town_City" ColumnName="Town/City" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="Post_Code" ColumnName="Post Code" />
+                <ScalarProperty Name="Allocation" ColumnName="Allocation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="enteredby" ColumnName="enteredby" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="reactiveCallOuts">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.reactiveCallOut">
+              <MappingFragment StoreEntitySet="reactiveCallOut">
+                <ScalarProperty Name="MBC_Job_No" ColumnName="MBC Job No" />
+                <ScalarProperty Name="Client_Job_No" ColumnName="Client Job No" />
+                <ScalarProperty Name="JobAddress" ColumnName="JobAddress" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="Trade" ColumnName="Trade" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ReportedBy" ColumnName="ReportedBy" />
+                <ScalarProperty Name="Client" ColumnName="Client" />
+                <ScalarProperty Name="DateOpened" ColumnName="DateOpened" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="ResponseTime" ColumnName="ResponseTime" />
+                <ScalarProperty Name="RequiredBy" ColumnName="RequiredBy" />
+                <ScalarProperty Name="DateClosed" ColumnName="DateClosed" />
+                <ScalarProperty Name="SubContractor" ColumnName="SubContractor" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="AddNewNotes" ColumnName="AddNewNotes" />
+                <ScalarProperty Name="Problem" ColumnName="Problem" />
+                <ScalarProperty Name="todaysDate" ColumnName="todaysDate" />
+                <ScalarProperty Name="timeOnSite" ColumnName="timeOnSite" />
+                <ScalarProperty Name="timeOffSite" ColumnName="timeOffSite" />
+                <ScalarProperty Name="materials" ColumnName="materials" />
+                <ScalarProperty Name="labour" ColumnName="labour" />
+                <ScalarProperty Name="totalCost" ColumnName="totalCost" />
+                <ScalarProperty Name="currentStatus" ColumnName="currentStatus" />
+                <ScalarProperty Name="costingNotes" ColumnName="costingNotes" />
+                <ScalarProperty Name="subContractorMaterials" ColumnName="subContractorMaterials" />
+                <ScalarProperty Name="subContractorlabour" ColumnName="subContractorlabour" />
+                <ScalarProperty Name="subContractorcosts" ColumnName="subContractorcosts" />
+                <ScalarProperty Name="siteName" ColumnName="siteName" />
+                <ScalarProperty Name="siteAddress" ColumnName="siteAddress" />
+                <ScalarProperty Name="siteAddress2" ColumnName="siteAddress2" />
+                <ScalarProperty Name="siteStreet" ColumnName="siteStreet" />
+                <ScalarProperty Name="siteTown" ColumnName="siteTown" />
+                <ScalarProperty Name="siteCounty" ColumnName="siteCounty" />
+                <ScalarProperty Name="sitePostCode" ColumnName="sitePostCode" />
+                <ScalarProperty Name="Invoiced" ColumnName="Invoiced" />
+                <ScalarProperty Name="jobLimits" ColumnName="jobLimits" />
+                <ScalarProperty Name="InvoiceAddress" ColumnName="InvoiceAddress" />
+                <ScalarProperty Name="sitePhone" ColumnName="sitePhone" />
+                <ScalarProperty Name="invoiceTotal" ColumnName="invoiceTotal" />
+                <ScalarProperty Name="materialsProfit" ColumnName="materialsProfit" />
+                <ScalarProperty Name="subContractorProfit" ColumnName="subContractorProfit" />
+                <ScalarProperty Name="subContractorInvoiceNumber" ColumnName="subContractorInvoiceNumber" />
+                <ScalarProperty Name="subContractorInvoiceDate" ColumnName="subContractorInvoiceDate" />
+                <ScalarProperty Name="subContractorInvoicePaid" ColumnName="subContractorInvoicePaid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="qryOpenCalls">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.qryOpenCall">
+              <MappingFragment StoreEntitySet="qryOpenCalls">
+                <ScalarProperty Name="SubContractor" ColumnName="SubContractor" />
+                <ScalarProperty Name="currentStatus" ColumnName="currentStatus" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="siteName" ColumnName="siteName" />
+                <ScalarProperty Name="Client_Job_No" ColumnName="Client Job No" />
+                <ScalarProperty Name="MBC_Job_No" ColumnName="MBC Job No" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="openCallsKevinDaleys">
+            <EntityTypeMapping TypeName="FMHelpdeskSQLV4Model.openCallsKevinDaley">
+              <MappingFragment StoreEntitySet="openCallsKevinDaley">
+                <ScalarProperty Name="SubContractor" ColumnName="SubContractor" />
+                <ScalarProperty Name="currentStatus" ColumnName="currentStatus" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="siteName" ColumnName="siteName" />
+                <ScalarProperty Name="Client_Job_No" ColumnName="Client Job No" />
+                <ScalarProperty Name="MBC_Job_No" ColumnName="MBC Job No" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

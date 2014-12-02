@@ -1,0 +1,106 @@
+﻿@model MBCFM.Models.FMIncidentsFM261
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Of MBC Job No  @Html.DisplayFor(model => model.MBC_Job_No) </h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MBC_Job_No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MBC_Job_No)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Client_Job_No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client_Job_No)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnteredBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnteredBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SiteTelNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SiteTelNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Priority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Priority)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubContractor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubContractor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Problem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Problem)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.currentStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.currentStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siteName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siteName)
+        </dd>
+
+         <dt>
+            @Html.DisplayNameFor(model => model.siteNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siteNotes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MBC_Job_No }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

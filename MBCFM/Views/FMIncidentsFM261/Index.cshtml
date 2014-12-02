@@ -1,0 +1,423 @@
+﻿@model IEnumerable<MBCFM.Models.FMIncidentsFM261>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Client_Job_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SiteNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Trade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnteredBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReportedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SiteTelNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOpened)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Priority)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResponseTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequiredBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateClosed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubContractor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Note)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddNewNotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Problem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.todaysDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timeOnSite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timeOffSite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.materials)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.labour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.totalCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.currentStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.costingNotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subContractorMaterials)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subContractorlabour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subContractorcosts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subContractorOverheads)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subContractorProfit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subContractorTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.siteName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.siteAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.siteAddress2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.siteStreet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.siteTown)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.siteCounty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sitePostCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Invoiced)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jobLimits)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estimatedTimeOfCompletion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpliftApprovedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.totalTimeOnSite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.overHeads)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.materialsProfit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.profitOnPlant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jobSheetSigned)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.callOutRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.initialCallOut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.callOutFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.totalToInvoice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.siteAllocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subContractorInvoiceNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subContractorInvoiceDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subContractorInvoicePaid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quotationDated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quotationApprovedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timeOnSite2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timeOffSite2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timeOnSite3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timeOffSite3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timeOnSite4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timeOffSite4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.siteNotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.addSiteNotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client_Job_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SiteNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnteredBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReportedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SiteTelNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOpened)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Priority)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResponseTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequiredBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateClosed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubContractor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Note)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddNewNotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Problem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.todaysDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timeOnSite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timeOffSite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.materials)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.labour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.totalCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.currentStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.costingNotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subContractorMaterials)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subContractorlabour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subContractorcosts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subContractorOverheads)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subContractorProfit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subContractorTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.siteName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.siteAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.siteAddress2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.siteStreet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.siteTown)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.siteCounty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sitePostCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Invoiced)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.jobLimits)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estimatedTimeOfCompletion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpliftApprovedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.totalTimeOnSite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.overHeads)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.materialsProfit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.profitOnPlant)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.jobSheetSigned)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.callOutRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.initialCallOut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.callOutFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.totalToInvoice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.siteAllocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subContractorInvoiceNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subContractorInvoiceDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subContractorInvoicePaid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quotationDated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quotationApprovedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timeOnSite2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timeOffSite2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timeOnSite3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timeOffSite3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timeOnSite4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timeOffSite4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.siteNotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.addSiteNotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeStamp)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MBC_Job_No }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MBC_Job_No }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MBC_Job_No })
+        </td>
+    </tr>
+}
+
+</table>

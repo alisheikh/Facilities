@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bb06fc49d51f46f18f3158ebe26a8073" Name="Diagram1">
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.callOutFee" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.callOutRate" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.Current_Status" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.FMIncident" Width="1.5" PointX="2.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.FMIncidentsFM261" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.initialCallOut" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.jobLimit" Width="1.5" PointX="6.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.little_chef" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.Order_Type" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.primaryCallOutFee" Width="1.5" PointX="8.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.Priority" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.ReActiveAddress" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.ResponseTime" Width="1.5" PointX="8.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.secondaryCallOutFee" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.Subcontractor" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.Switchboard_Item" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.sysdiagram" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.Travelodge" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.User" Width="1.5" PointX="8.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.reactiveCallOut" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.qryOpenCall" Width="1.5" PointX="14.75" PointY="11.125" />
+        <EntityTypeShape EntityType="FMHelpdeskSQLV4Model.openCallsKevinDaley" Width="1.5" PointX="10.75" PointY="1" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
