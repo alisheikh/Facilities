@@ -8,7 +8,7 @@
     [OrderType] VARCHAR(50) NULL, 
     [SitePhoneNo] VARCHAR(50) NULL, 
     [Problem] VARCHAR(MAX) NULL, 
-    [SubContractor] INT NULL, 
+    [UserName] VARCHAR(50) NULL, 
     [Notes] VARCHAR(MAX) NULL, 
 	[ArrivalTime] DATETIME NULL, 
     [DepartureTime] DATETIME NULL, 
@@ -16,5 +16,5 @@
     [CostsOfMaterials] VARCHAR(MAX) NULL, 
     [MetrialsRequired] VARCHAR(MAX) NULL, 
     [DurationToComplete] VARCHAR(50) NULL, 
-    CONSTRAINT [FK_Jobs_ToUsers] FOREIGN KEY (SubContractor) REFERENCES Users(UserId)
+    CONSTRAINT [FK_Jobs_ToUsers] FOREIGN KEY ([UserName]) REFERENCES Users(UserName)
 )

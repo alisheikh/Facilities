@@ -16,6 +16,8 @@ namespace MBCFM.Models
         public string OrderType { get; set; }
         public string SitePhoneNo { get; set; }
         public string Problem { get; set; }
-        public int SubContractor { get; set; }
+        public string UserName { get; set; }
+
+        public virtual User SubContractor { get; set; }
     }
 }
