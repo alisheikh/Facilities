@@ -125,8 +125,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Job.cs" />
+    <Compile Include="Models\JobsContext.cs" />
+    <Compile Include="Models\JobView.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Models\WorkItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

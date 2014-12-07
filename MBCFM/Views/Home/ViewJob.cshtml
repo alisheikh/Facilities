@@ -1,74 +1,80 @@
-﻿@model IEnumerable<MBCFM.Models.Job>
+﻿@model MBCFM.Models.JobView
 
 <article class="job-view box">
 
-    <div class="priority"><span>Priority</span><span class="number">1</span></div>
+    <div class="priority"><span>Priority</span><span class="number">@Model.Job.Priority</span></div>
     <div class="title">
-        <p class="client-job-number">Client Job # <span class="number">3511928</span></p>
-        <h1><span class="mbc-job-number">#396</span> - <span class="job-title">Leicester Markfield</span></h1>
+        <p class="client-job-number">Client Job # <span class="number">@Model.Job.ClientJobNo</span></p>
+        <h1><span class="mbc-job-number">#@Model.Job.MbcJobNo</span> - <span class="job-title">@Model.Job.ClientName</span></h1>
     </div>
     <div class="details">
         <div class="">
-            <p class="site-tel"><span class="label">Site Tel No</span><span ="info">08719846083</span></p>
-            <p class="order-type"><span class="label">Order Type</span><span ="info">CAPEX</span></p>
-            <p class="order-status"><span class="label">Status</span><span ="info">Quote/Uplift</span></p>
+            <p class="site-tel"><span class="label">Site Tel No</span><span class="info">@Model.Job.SitePhoneNo</span></p>
+            <p class="order-type"><span class="label">Order Type</span><span class="info">@Model.Job.OrderType</span></p>
+            <p class="order-status"><span class="label">Status</span><span class="info">@Model.Job.CurrentStatus</span></p>
         </div>
         <div>
-            <p class="half">Sub Contractor <strong>Kevin Daley</strong></p>
-            <p class="half">Entered by <strong>Craig Leech</strong></p>
+            <p class="half">Sub Contractor <strong>@Model.User.FullName</strong></p>
+            <p class="half">Entered by <strong>@Model.Job.EnteredBy</strong></p>
             <span class="clearfix"></span>
         </div>
         <div>
             <h4>Problem</h4>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+            <p>@Model.Job.Problem</p>
 
-            <h4>Notes</h4>
-            <p>Only show if has notes?</p>
+            @if (!string.IsNullOrWhiteSpace(Model.Job.Notes))
+            {
+                <h4>Notes</h4>
+                <p>@Model.Job.Notes</p>
+            }
         </div>
     </div>
 
-    <div class="form">
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(m => m.Job.MbcJobNo)
+        <div class="form">
 
-        <div class="half">
-            <label>Arrival Time</label>
-            <input type="date" />
-        </div>
-        <div class="half">
-            <label>Depature Time</label>
-            <input type="date" />
-        </div>
-        <div>
-            <label>Materials Used</label>
-            <textarea></textarea>
-        </div>
-        <div>
-            <label>Costs Of Materials Purchased</label>
-            <textarea></textarea>
-        </div>
-        <div>
-            <label>Materials Required</label>
-            <textarea></textarea>
-        </div>
-        <div class="half">
-            <label>Work Completed</label>
+            <div class="half">
+                <label>Arrival Time</label>
+                <input type="date" name="ArrivalTime" value="@(Model.Job.ArrivalTime.HasValue ? Model.Job.ArrivalTime.Value.ToString("yyyy-MM-dd") : string.Empty)" />
+            </div>
+            <div class="half">
+                <label>Depature Time</label>
+                <input type="date" name="departureTime" value="@(Model.Job.DepartureTime.HasValue ? Model.Job.DepartureTime.Value.ToString("yyyy-MM-dd") : string.Empty)" />
+            </div>
+            <div>
+                <label>Materials Used</label>
+                <textarea name="materialsUsed">@Model.Job.MaterialsUsed</textarea>
+            </div>
+            <div>
+                <label>Costs Of Materials Purchased</label>
+                <textarea name="costsOfMaterials">@Model.Job.CostsOfMaterials</textarea>
+            </div>
+            <div>
+                <label>Materials Required</label>
+                <textarea name="materialsRequired">@Model.Job.MaterialsRequired</textarea>
+            </div>
+            <div class="half">
+                <label>Work Completed</label>
+
+            </div>
+            <div class="half">
+                <label>Duration Require to complete</label>
+                <input type="text" name="durationToCompletion" value="@Model.Job.DurationToCompletion">
+            </div>
+            <span class="clearfix"></span>
 
         </div>
-        <div class="half">
-            <label>Duration Require to complete</label>
-            <input type="text" />
+
+        <div class="action">
+            <button type="submit" class="button">Update</button>
         </div>
-        <span class="clearfix"></span>
 
-    </div>
-
-    <div class="action">
-        <a class="button" href="job-view.html">Update</a>
-    </div>
-
-    <a class="big button" href="job-view.html">
-        <h4>Resolve</h4>
-        <p>Will close this job and send to Help Desk</p>
-    </a>
-
+        <a class="big button" href="#">
+            <h4>Resolve</h4>
+            <p>Will close this job and send to Help Desk</p>
+        </a>
+    }
     <div class="clearfix"></div>
 </article>

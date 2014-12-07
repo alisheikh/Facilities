@@ -14,7 +14,8 @@
     [DepartureTime] DATETIME NULL, 
     [MaterialsUsed] VARCHAR(MAX) NULL, 
     [CostsOfMaterials] VARCHAR(MAX) NULL, 
-    [MetrialsRequired] VARCHAR(MAX) NULL, 
-    [DurationToComplete] VARCHAR(50) NULL, 
-    CONSTRAINT [FK_Jobs_ToUsers] FOREIGN KEY ([UserName]) REFERENCES Users(UserName)
+    [MaterialsRequired] VARCHAR(MAX) NULL, 
+    [DurationToCompletion] VARCHAR(50) NULL, 
+    [EnteredBy] VARCHAR(50) NULL, 
+    CONSTRAINT [FK_Jobs_ToUsers] FOREIGN KEY ([UserName]) REFERENCES Users([UserName])
 )
