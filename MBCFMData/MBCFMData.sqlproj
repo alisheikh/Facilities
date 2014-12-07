@@ -65,4 +65,7 @@
   <ItemGroup>
     <RefactorLog Include="MBCFMData.refactorlog" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment.ReferenceData.sql" />
+  </ItemGroup>
 </Project>
