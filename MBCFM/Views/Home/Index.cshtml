@@ -15,7 +15,7 @@
                 <p class="order-status"><span class="label">Status</span><span class="info">@job.CurrentStatus</span></p>
             </div>
             <div class="action">
-                @Html.ActionLink("Update", "ViewJob", new { mbcJobNo = job.MbcJobNo }, new { @class = "button" })
+                @Html.ActionLink("Update", "EditJob", new { mbcJobNo = job.MbcJobNo }, new { @class = "button" })
             </div>
             <div class="clearfix"></div>
         </li>

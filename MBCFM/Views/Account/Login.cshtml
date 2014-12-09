@@ -1,11 +1,15 @@
-﻿
-@{
-    ViewBag.Title = "Login";
-}
+﻿@model MBCFM.Models.User
 <h2>Login</h2>
-<form action="/Account/Login" method="post">
-    <div>Username: <input name="username" type="text" /></div>
-    <div>Password: <input name="password" type="password" /></div>
+@using (Html.BeginForm())
+{
+    <div>Username: @Html.EditorFor(m => m.UserName)</div>
+    <div>@Html.ValidationMessageFor(m => m.UserName)</div>
+    <div>Password: @Html.EditorFor(m => m.Password)</div>
+    <div>@Html.ValidationMessageFor(m => m.Password)</div>
     <div><input type="submit" value="Login" /></div>
-</form>
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
 
