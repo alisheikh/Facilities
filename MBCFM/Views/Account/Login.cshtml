@@ -2,9 +2,10 @@
 <h2>Login</h2>
 @using (Html.BeginForm())
 {
+    @Html.AntiForgeryToken()
     <div>Username: @Html.EditorFor(m => m.UserName)</div>
     <div>@Html.ValidationMessageFor(m => m.UserName)</div>
-    <div>Password: @Html.EditorFor(m => m.Password)</div>
+    <div>Password: @Html.PasswordFor(m => m.Password)</div>
     <div>@Html.ValidationMessageFor(m => m.Password)</div>
     <div><input type="submit" value="Login" /></div>
 }

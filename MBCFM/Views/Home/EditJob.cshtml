@@ -32,6 +32,7 @@
 
     @using (Html.BeginForm())
     {
+        @Html.AntiForgeryToken()
         @Html.HiddenFor(m => m.Job.MbcJobNo)
         <div class="form">
 

@@ -16,7 +16,7 @@ namespace MBCFM.Controllers
             //goes to database to get list of jobs for the current user
             using (var db = new JobsContext())
             {
-                jobs = db.Jobs.Where(j => j.UserName == User.Identity.Name).ToList();
+                //jobs = db.Jobs.Where(j => j.UserName == User.Identity.Name).ToList();
             }
 
             return View(jobs);
