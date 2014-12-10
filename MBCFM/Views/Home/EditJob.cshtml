@@ -1,0 +1,86 @@
+﻿@model MBCFM.Models.JobView
+
+<article class="job-view box">
+
+    <div class="priority"><span>Priority</span><span class="number">@Model.Job.Priority</span></div>
+    <div class="title">
+        <p class="client-job-number">Client Job # <span class="number">@Model.Job.ClientJobNo</span></p>
+        <h1><span class="mbc-job-number">#@Model.Job.MbcJobNo</span> - <span class="job-title">@Model.Job.ClientName</span></h1>
+    </div>
+    <div class="details">
+        <div class="">
+            <p class="site-tel"><span class="label">Site Tel No</span><span class="info">@Model.Job.SitePhoneNo</span></p>
+            <p class="order-type"><span class="label">Order Type</span><span class="info">@Model.Job.OrderType</span></p>
+            <p class="order-status"><span class="label">Status</span><span class="info">@Model.Job.CurrentStatus</span></p>
+        </div>
+        <div>
+            <p class="half">Sub Contractor <strong>@Model.User.FullName</strong></p>
+            <p class="half">Entered by <strong>@Model.Job.EnteredBy</strong></p>
+            <span class="clearfix"></span>
+        </div>
+        <div>
+            <h4>Problem</h4>
+            <p>@Model.Job.Problem</p>
+
+            @if (!string.IsNullOrWhiteSpace(Model.Job.Notes))
+            {
+                <h4>Notes</h4>
+                <p>@Model.Job.Notes</p>
+            }
+        </div>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(m => m.Job.MbcJobNo)
+        <div class="form">
+
+            <div class="half">
+                <label>Arrival Time</label>
+                @Html.EditorFor(m=>m.Job.ArrivalTime)
+                @*<input type="date" name="ArrivalTime" value="@(Model.Job.ArrivalTime.HasValue ? Model.Job.ArrivalTime.Value.ToString("yyyy-MM-dd") : string.Empty)" />*@
+            </div>
+            <div class="half">
+                <label>Depature Time</label>
+                <input type="date" name="departureTime" value="@(Model.Job.DepartureTime.HasValue ? Model.Job.DepartureTime.Value.ToString("yyyy-MM-dd") : string.Empty)" />
+            </div>
+            <div>
+                <label>Materials Used</label>
+                <textarea name="materialsUsed">@Model.Job.MaterialsUsed</textarea>
+            </div>
+            <div>
+                <label>Costs Of Materials Purchased</label>
+                <textarea name="costsOfMaterials">@Model.Job.CostsOfMaterials</textarea>
+            </div>
+            <div>
+                <label>Materials Required</label>
+                <textarea name="materialsRequired">@Model.Job.MaterialsRequired</textarea>
+            </div>
+            <div class="half">
+                <label>Work Completed</label>
+
+            </div>
+            <div class="half">
+                <label>Duration Require to complete</label>
+                <input type="text" name="durationToCompletion" value="@Model.Job.DurationToCompletion">
+            </div>
+            <span class="clearfix"></span>
+
+        </div>
+
+        <div class="action">
+            <button type="submit" class="button">Update</button>
+        </div>
+
+        <a class="big button" href="#">
+            <h4>Resolve</h4>
+            <p>Will close this job and send to Help Desk</p>
+        </a>
+    }
+    <div class="clearfix"></div>
+</article>
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -29,52 +29,36 @@
             }
         </div>
     </div>
+    <h3>Details</h3>
+    <div class="half">
+        <label>Arrival Time</label>
+        <p class="half">@(Model.Job.ArrivalTime.HasValue ? Model.Job.ArrivalTime.Value.ToString("yyyy-MM-dd") : "Not Entered")</p>
+    </div>
+    <div class="half">
+        <label>Depature Time</label>
+        <p class="half">"@(Model.Job.DepartureTime.HasValue ? Model.Job.DepartureTime.Value.ToString("yyyy-MM-dd") : "Not Entered")</p>
+    </div>
+    <div>
+        <label>Materials Used</label>
+        <p class="half">@Model.Job.MaterialsUsed</p>
+    </div>
+    <div>
+        <label>Costs Of Materials Purchased</label>
+        <p class="half">@Model.Job.CostsOfMaterials</p>
+    </div>
+    <div>
+        <label>Materials Required</label>
+        <p class="half">@Model.Job.MaterialsRequired</p>
+    </div>
+    <div class="half">
+        <label>Work Completed</label>
 
-    @using (Html.BeginForm())
-    {
-        @Html.HiddenFor(m => m.Job.MbcJobNo)
-        <div class="form">
+    </div>
+    <div class="half">
+        <label>Duration Require to complete</label>
+        <p class="half">@Model.Job.DurationToCompletion</p>
+    </div>
+    <span class="clearfix"></span>
 
-            <div class="half">
-                <label>Arrival Time</label>
-                <input type="date" name="ArrivalTime" value="@(Model.Job.ArrivalTime.HasValue ? Model.Job.ArrivalTime.Value.ToString("yyyy-MM-dd") : string.Empty)" />
-            </div>
-            <div class="half">
-                <label>Depature Time</label>
-                <input type="date" name="departureTime" value="@(Model.Job.DepartureTime.HasValue ? Model.Job.DepartureTime.Value.ToString("yyyy-MM-dd") : string.Empty)" />
-            </div>
-            <div>
-                <label>Materials Used</label>
-                <textarea name="materialsUsed">@Model.Job.MaterialsUsed</textarea>
-            </div>
-            <div>
-                <label>Costs Of Materials Purchased</label>
-                <textarea name="costsOfMaterials">@Model.Job.CostsOfMaterials</textarea>
-            </div>
-            <div>
-                <label>Materials Required</label>
-                <textarea name="materialsRequired">@Model.Job.MaterialsRequired</textarea>
-            </div>
-            <div class="half">
-                <label>Work Completed</label>
-
-            </div>
-            <div class="half">
-                <label>Duration Require to complete</label>
-                <input type="text" name="durationToCompletion" value="@Model.Job.DurationToCompletion">
-            </div>
-            <span class="clearfix"></span>
-
-        </div>
-
-        <div class="action">
-            <button type="submit" class="button">Update</button>
-        </div>
-
-        <a class="big button" href="#">
-            <h4>Resolve</h4>
-            <p>Will close this job and send to Help Desk</p>
-        </a>
-    }
     <div class="clearfix"></div>
 </article>

@@ -23,7 +23,7 @@ namespace MBCFM.Controllers
         }
 
         [HttpGet]
-        public ActionResult ViewJob(int mbcJobNo)
+        public ActionResult EditJob(int mbcJobNo)
         {
             JobView view = new JobView();
             using (var db = new JobsContext())
@@ -36,7 +36,7 @@ namespace MBCFM.Controllers
         }
 
         [HttpPost]
-        public ActionResult ViewJob(int mbcJobNo, DateTime? arrivalTime, DateTime? departureTime, string materialsUsed, string costsOfMaterials, string materialsRequired, string durationToCompletion)
+        public ActionResult EditJob(int mbcJobNo, DateTime? arrivalTime, DateTime? departureTime, string materialsUsed, string costsOfMaterials, string materialsRequired, string durationToCompletion)
         {
             using (var db = new JobsContext())
             {
@@ -53,6 +53,18 @@ namespace MBCFM.Controllers
                 }
             }
             return RedirectToAction("Index");
+        }
+
+        public ActionResult ViewJob(int mbcJobNo)
+        {
+            JobView view = new JobView();
+            using (var db = new JobsContext())
+            {
+                view.Job = db.Jobs.Where(j => j.MbcJobNo == mbcJobNo).FirstOrDefault();
+                view.User = db.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
+            }
+
+            return View(view);
         }
     }
 }
