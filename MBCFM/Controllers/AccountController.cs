@@ -46,6 +46,7 @@ namespace MBCFM.Controllers
             }
             else
             {
+                ViewBag.Error = "Username or password is invalid.";
                 return View();
             }
         }

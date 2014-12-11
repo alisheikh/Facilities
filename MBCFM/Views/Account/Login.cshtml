@@ -1,13 +1,25 @@
 ﻿@model MBCFM.Models.User
 <h2>Login</h2>
-@using (Html.BeginForm())
+@using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "login" }))
 {
     @Html.AntiForgeryToken()
-    <div>Username: @Html.EditorFor(m => m.UserName)</div>
-    <div>@Html.ValidationMessageFor(m => m.UserName)</div>
-    <div>Password: @Html.PasswordFor(m => m.Password)</div>
-    <div>@Html.ValidationMessageFor(m => m.Password)</div>
-    <div><input type="submit" value="Login" /></div>
+    if (!string.IsNullOrWhiteSpace(ViewBag.Error))
+    {
+        <div class="has-error">@ViewBag.Error</div>
+    }
+    <div class="input-group">
+        @Html.LabelFor(m => m.UserName)
+        @Html.EditorFor(m => m.UserName)
+        @Html.ValidationMessageFor(m => m.UserName)
+    </div>
+    <div class="input-group">
+        @Html.LabelFor(m => m.Password)
+        @Html.EditorFor(m => m.Password)
+        @Html.ValidationMessageFor(m => m.Password)
+    </div>
+    <div class="input-group">
+        <input class="button" type="submit" value="Login" />
+    </div>
 }
 
 @section Scripts{

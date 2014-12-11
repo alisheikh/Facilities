@@ -130,6 +130,7 @@
     <Compile Include="Models\ChangePassword.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\JobsContext.cs" />
+    <Compile Include="Models\JobsInitialiser.cs" />
     <Compile Include="Models\JobView.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -154,7 +155,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
