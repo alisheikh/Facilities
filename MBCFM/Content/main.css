@@ -16,7 +16,7 @@ textarea {
 }
 
 html {
-    font-size: 1em;
+  font-size: 1em;
     line-height: 1.4;
 }
 
@@ -26,12 +26,12 @@ html {
  * Customize the background color to match your design.
  */
 ::-moz-selection {
-    background: #b3d4fc;
+  background: #b3d4fc;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+  background: #b3d4fc;
     text-shadow: none;
 }
 
@@ -39,11 +39,11 @@ html {
  * A better looking default horizontal rule
  */
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
     padding: 0;
 }
 
@@ -62,8 +62,8 @@ video {
  * Remove default fieldset styles.
  */
 fieldset {
-    border: 0;
-    margin: 0;
+  border: 0;
+  margin: 0;
     padding: 0;
 }
 
@@ -78,9 +78,9 @@ textarea {
    Browse Happy prompt
    ========================================================================== */
 .browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
     padding: 0.2em 0;
 }
 
@@ -92,124 +92,125 @@ h4 {
 }
 
 .button {
-    display: inline-block;
-    text-decoration: none;
-    font-style: normal;
-    color: #FFF;
-    font-size: 16px;
-    line-height: 1em;
-    padding: 8px 0.7em;
-    background: -moz-linear-gradient(top, #fcfcfc 0%, #eee 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fcfcfc), color-stop(100%, #eee));
-    background: -webkit-linear-gradient(top, #fcfcfc 0%, #eee 100%);
-    background: -o-linear-gradient(top, #fcfcfc 0%, #eee 100%);
-    background: -ms-linear-gradient(top, #fcfcfc 0%, #eee 100%);
-    background: linear-gradient(top, #fcfcfc 0%, #eee 100%);
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
-    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-    border-bottom: 1px solid #b2b2b2;
-    border-left: 1px solid #d4d4d4;
-    border-right: 1px solid #d4d4d4;
-    border-top: 1px solid #e5e5e5;
-    color: #13608B;
-    cursor: pointer;
-    display: inline-block;
-    font-weight: bold;
-    nowhitespace: afterproperty;
-    overflow: visible;
-    padding: 0.55em 0.85em;
-    text-align: center;
-    width: auto;
-    font-size: 0.9em;
-    margin: 1em 0 1em 0;
+  display: inline-block;
+  text-decoration: none;
+  font-style: normal;
+  color: #FFF;
+  font-size: 16px;
+  line-height: 1em;
+  padding: 8px 0.7em;
+  background: -moz-linear-gradient(top, #fcfcfc 0%, #eee 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fcfcfc), color-stop(100%, #eee));
+  background: -webkit-linear-gradient(top, #fcfcfc 0%, #eee 100%);
+  background: -o-linear-gradient(top, #fcfcfc 0%, #eee 100%);
+  background: -ms-linear-gradient(top, #fcfcfc 0%, #eee 100%);
+  background: linear-gradient(top, #fcfcfc 0%, #eee 100%);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid #b2b2b2;
+  border-left: 1px solid #d4d4d4;
+  border-right: 1px solid #d4d4d4;
+  border-top: 1px solid #e5e5e5;
+  color: #13608B;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  nowhitespace: afterproperty;
+  overflow: visible;
+  padding: 0.55em 0.85em;
+  text-align: center;
+  width: auto;
+  font-size: 0.9em;
+  margin: 1em 0 1em 0;
     font-weight: bold;
 }
 
 .big.button {
-    display: block;
+  display: block;
     margin: 0 1em;
 }
 
 .button h4 {
-    margin: 0.2em;
+  margin: 0.2em;
     font-size: 2em;
 }
 
 header {
-    width: 100%;
-    float: left;
-    background: #000;
-    color: #FFF;
+  width: 100%;
+  float: left;
+  background: #000;
+  color: #FFF;
     margin: 0 0 1em 0;
 }
 
 .wrapper {
-    width: 90%;
-    padding: 1em 5%;
-    clear: both;
-    margin: 0 auto;
+  width: 90%;
+  padding: 1em 5%;
+  clear: both;
+  margin: 0 auto;
     max-width: 1000px;
 }
 
 nav {
-    float: left;
+  float: left;
     width: 35%;
 }
 
 .logo {
-    float: left;
+  float: left;
     text-align: center;
 }
 
 .user {
-    float: right;
-    width: 35%;
-    text-align: right;
+  float: right;
+  width: 35%;
+  text-align: right;
+  font-size:10px;
 }
 
 .header {
-    padding: 0.5em;
-    background: #000;
-    color: #FFC20F;
+  padding: 0.5em;
+  background: #000;
+  color: #FFC20F;
     margin: 0;
 }
 
 ul {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
     list-style: none;
 }
 
 .box {
-    border: 1px solid #ccc;
+  border: 1px solid #ccc;
     clear: both;
 }
 
 .job-list li {
-    padding: 1em;
+  padding: 1em;
     border-bottom: 1px solid #ccc;
 }
 
 .priority {
-    float: left;
-    width: 10%;
+  float: left;
+  width: 10%;
     text-align: center;
 }
 
-    .priority .number {
-        clear: both;
-        display: block;
-        font-weight: bold;
+.priority .number {
+  clear: both;
+  display: block;
+  font-weight: bold;
         font-size: 1.5em;
     }
 
 .job-details {
-    float: left;
+  float: left;
     width: 65%;
 }
 
@@ -218,12 +219,12 @@ h1 {
 }
 
 p {
-    margin: 0;
+  margin: 0;
     padding: 0;
 }
 
 .label {
-    width: 15%;
+  width: 15%;
     display: inline-block;
 }
 
@@ -231,12 +232,12 @@ p {
     text-align: right;
 }
 
-    .action .button {
+  .action .button {
         font-size: 1.5em;
     }
 
 .half {
-    float: left;
+  float: left;
     width: 50%;
 }
 
@@ -244,46 +245,46 @@ p {
     position: relative;
 }
 
-    .job-view div {
-        padding: 1em;
+  .job-view div {
+    padding: 1em;
         box-sizing: border-box;
     }
 
-    .job-view .priority {
-        right: 0px;
-        top: 0px;
+  .job-view .priority {
+    right: 0px;
+    top: 0px;
         position: absolute;
     }
 
-    .job-view .details {
-        background: #EEEEEE;
-        border-top: 1px solid #ccc;
-        border-bottom: 5px solid #ccc;
+  .job-view .details {
+    background: #EEEEEE;
+    border-top: 1px solid #ccc;
+    border-bottom: 5px solid #ccc;
         padding: 0;
     }
 
-        .job-view .details div {
-            padding: 1em;
+    .job-view .details div {
+      padding: 1em;
             border-bottom: 1px solid #ccc;
         }
 
-    .job-view .form {
-        padding: 0;
+.job-view .form {
+  padding: 0;
         border-bottom: 1px solid #ccc;
     }
 
 label {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
     font-weight: bold;
 }
 
 input, textarea {
-    display: block;
-    width: 100%;
-    padding: 0.5em;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
     background: white;
 }
 
@@ -294,17 +295,17 @@ input, textarea {
  * Image replacement
  */
 .ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    /* IE 6/7 fallback */
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
     *text-indent: -9999px;
 }
 
-    .ir:before {
-        content: "";
-        display: block;
-        width: 0;
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
         height: 150%;
     }
 
@@ -312,7 +313,7 @@ input, textarea {
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
 .hidden {
-    display: none !important;
+  display: none !important;
     visibility: hidden;
 }
 
@@ -320,27 +321,27 @@ input, textarea {
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
     width: 1px;
 }
 
-    /*
+/*
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
  */
-    .visuallyhidden.focusable:active,
-    .visuallyhidden.focusable:focus {
-        clip: auto;
-        height: auto;
-        margin: 0;
-        overflow: visible;
-        position: static;
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
         width: auto;
     }
 
@@ -364,9 +365,9 @@ input, textarea {
  */
 .clearfix:before,
 .clearfix:after {
-    content: " ";
-    /* 1 */
-    display: table;
+  content: " ";
+  /* 1 */
+  display: table;
     /* 2 */
 }
 
@@ -399,69 +400,69 @@ input, textarea {
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
 @media print {
-    * {
-        background: transparent !important;
-        color: #000 !important;
-        /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
         text-shadow: none !important;
     }
 
-    a,
-    a:visited {
+  a,
+  a:visited {
         text-decoration: underline;
     }
 
-        a[href]:after {
+  a[href]:after {
             content: " (" attr(href) ")";
         }
 
-    abbr[title]:after {
+  abbr[title]:after {
         content: " (" attr(title) ")";
     }
 
-    /*
+  /*
    * Don't show links for images, or javascript/internal links
    */
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
         content: "";
     }
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
+  pre,
+  blockquote {
+    border: 1px solid #999;
         page-break-inside: avoid;
     }
 
-    thead {
-        display: table-header-group;
+  thead {
+    display: table-header-group;
         /* h5bp.com/t */
     }
 
-    tr,
-    img {
+  tr,
+  img {
         page-break-inside: avoid;
     }
 
-    img {
+  img {
         max-width: 100% !important;
     }
 
-    @page {
+  @page {
         margin: 0.5cm;
     }
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
+  p,
+  h2,
+  h3 {
+    orphans: 3;
         widows: 3;
     }
 
-    h2,
-    h3 {
+  h2,
+  h3 {
         page-break-after: avoid;
     }
 }
