@@ -128,14 +128,17 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ChangePassword.cs" />
+    <Compile Include="Models\ExtraJobData.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\JobsContext.cs" />
-    <Compile Include="Models\JobsInitialiser.cs" />
     <Compile Include="Models\JobView.cs" />
+    <Compile Include="Models\MergedJob.cs" />
+    <Compile Include="Models\Helpers.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\jquery.datetimepicker.css" />
     <Content Include="Content\main.css" />
     <Content Include="Content\marshall-logo.png" />
     <Content Include="Content\normalize.css" />
@@ -147,6 +150,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.datetimepicker.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />

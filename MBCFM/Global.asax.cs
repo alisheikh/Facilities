@@ -18,9 +18,6 @@ namespace MBCFM
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            //this will recreate the database if the model classes have been changed
-            Database.SetInitializer(new JobsInitialiser());
         }
     }
 }

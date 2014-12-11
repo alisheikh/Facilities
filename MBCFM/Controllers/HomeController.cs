@@ -12,11 +12,11 @@ namespace MBCFM.Controllers
     {
         public ActionResult Index()
         {
-            IEnumerable<Job> jobs = null;
+            IEnumerable<MergedJob> jobs = null;
             //goes to database to get list of jobs for the current user
             using (var db = new JobsContext())
             {
-                //jobs = db.Jobs.Where(j => j.UserName == User.Identity.Name).ToList();
+                jobs = Helpers.GetMergedJobsQuery(db).Where(mj => mj.Job.UserName == User.Identity.Name && mj.Job.CurrentStatus.ToLower() != "closed").ToList();
             }
 
             return View(jobs);
@@ -28,7 +28,7 @@ namespace MBCFM.Controllers
             JobView view = new JobView();
             using (var db = new JobsContext())
             {
-                view.Job = db.Jobs.Where(j => j.MbcJobNo == mbcJobNo).FirstOrDefault();
+                view.JobData = Helpers.GetMergedJobsQuery(db).Where(mj => mj.Job.MbcJobNo == mbcJobNo).FirstOrDefault();
                 view.User = db.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
             }
 
@@ -45,10 +45,36 @@ namespace MBCFM.Controllers
                 {
                     job.ArrivalTime = arrivalTime;
                     job.DepartureTime = departureTime;
-                    job.MaterialsUsed = materialsUsed;
-                    job.CostsOfMaterials = costsOfMaterials;
-                    job.MaterialsRequired = materialsRequired;
+                    decimal costs;
+                    decimal.TryParse(costsOfMaterials, out costs);
+                    if (costs > 0)
+                        job.CostsOfMaterials = costs;
                     job.DurationToCompletion = durationToCompletion;
+
+                    //only update the extra data if we need to
+                    if (!string.IsNullOrWhiteSpace(materialsRequired) || !string.IsNullOrWhiteSpace(materialsUsed))
+                    {
+                        var extraData = db.ExtraJobs.Where(ed => ed.MBCJobNo == mbcJobNo).FirstOrDefault();
+                        if (extraData == null)
+                        {
+                            //doesn't exists so create a new entry
+                            extraData = new ExtraJobData
+                            {
+                                MaterialsRequired = materialsRequired,
+                                MaterialsUsed = materialsUsed,
+                                MBCJobNo = mbcJobNo,
+                                HelpDeskNotified = false
+                            };
+                            db.ExtraJobs.Add(extraData);
+                        }
+                        else
+                        {
+                            //exists so update the fields
+                            extraData.MaterialsRequired = materialsRequired;
+                        }
+                    }
+
+                    //saves database changes in one transaction
                     db.SaveChanges();
                 }
             }
@@ -60,11 +86,21 @@ namespace MBCFM.Controllers
             JobView view = new JobView();
             using (var db = new JobsContext())
             {
-                view.Job = db.Jobs.Where(j => j.MbcJobNo == mbcJobNo).FirstOrDefault();
+                view.JobData = Helpers.GetMergedJobsQuery(db).Where(mj => mj.Job.MbcJobNo == mbcJobNo).FirstOrDefault();
                 view.User = db.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
             }
 
             return View(view);
+        }
+
+        public ActionResult ViewNotifications()
+        {
+            IEnumerable<MergedJob> jobs = null;
+            using (var db = new JobsContext())
+            {
+                jobs = Helpers.GetMergedJobsQuery(db).Where(mj => mj.ExtraData != null && mj.ExtraData.HelpDeskNotified.HasValue && mj.ExtraData.HelpDeskNotified.Value);
+            }
+            return View(jobs);
         }
     }
 }

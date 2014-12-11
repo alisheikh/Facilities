@@ -4,12 +4,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBCFM.Models
 {
-    [Table("WebJob")] 
+    [Table("WebJobs")] 
     public class Job
     {
         [Key]
+        [Column("MBC Job No")]
         public int MbcJobNo { get; set; }
-        public int ClientJobNo { get; set; }
+        [Column("Client Job No")]
+        public string ClientJobNo { get; set; }
         public int? Priority { get; set; }
         public string ClientName { get; set; }
         public string CurrentStatus { get; set; }
@@ -21,10 +23,7 @@ namespace MBCFM.Models
         public string Notes { get; set; }
         public DateTime? ArrivalTime { get; set; }
         public DateTime? DepartureTime { get; set; }
-        public string MaterialsUsed { get; set; }
-        public string CostsOfMaterials { get; set; }
-        public string MaterialsRequired { get; set; }
+        public decimal? CostsOfMaterials { get; set; }
         public string DurationToCompletion { get; set; }
-        public bool HelpDeskNotified { get; set; }
     }
 }

@@ -1,21 +1,21 @@
-﻿@model IEnumerable<MBCFM.Models.Job>
+﻿@model IEnumerable<MBCFM.Models.MergedJob>
 <h3 class="header">Job List</h3>
 
 @if (Model!=null && Model.Count() > 0)
 {<ul class="job-list box">
-        @foreach (var job in Model)
+        @foreach (var merged in Model)
         {
         <li>
-            <div class="priority"><span>Priority</span><span class="number">@job.Priority</span></div>
+            <div class="priority"><span>Priority</span><span class="number">@merged.Job.Priority</span></div>
 
             <div class="job-details">
-                <p class="client-job-number">Client Job # <span class="number">@job.ClientJobNo</span></p>
-                <h1><span class="mbc-job-number">#@job.MbcJobNo</span> - <span class="job-title">@job.ClientName</span></h1>
-                <p class="order-type"><span class="label">Order Type</span><span class="info">@job.OrderType</span></p>
-                <p class="order-status"><span class="label">Status</span><span class="info">@job.CurrentStatus</span></p>
+                <p class="client-job-number">Client Job # <span class="number">@merged.Job.ClientJobNo</span></p>
+                <h1><span class="mbc-job-number">#@merged.Job.MbcJobNo</span> - <span class="job-title">@merged.Job.ClientName</span></h1>
+                <p class="order-type"><span class="label">Order Type</span><span class="info">@merged.Job.OrderType</span></p>
+                <p class="order-status"><span class="label">Status</span><span class="info">@merged.Job.CurrentStatus</span></p>
             </div>
             <div class="action">
-                @Html.ActionLink("Update", "EditJob", new { mbcJobNo = job.MbcJobNo }, new { @class = "button" })
+                @Html.ActionLink("Update", "EditJob", new { mbcJobNo = merged.Job.MbcJobNo }, new { @class = "button" })
             </div>
             <div class="clearfix"></div>
         </li>

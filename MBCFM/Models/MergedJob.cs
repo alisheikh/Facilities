@@ -5,9 +5,9 @@ using System.Web;
 
 namespace MBCFM.Models
 {
-    public class JobView
+    public class MergedJob
     {
-        public MergedJob JobData { get; set; }
-        public User User { get; set; }
+        public Job Job { get; set; }
+        public ExtraJobData  ExtraData { get; set; }
     }
 }

@@ -1,7 +1,8 @@
 ﻿@model MBCFM.Models.User
-<h2>Login</h2>
+
 @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "login" }))
 {
+    <h2>Login</h2>
     @Html.AntiForgeryToken()
     if (!string.IsNullOrWhiteSpace(ViewBag.Error))
     {
@@ -14,7 +15,7 @@
     </div>
     <div class="input-group">
         @Html.LabelFor(m => m.Password)
-        @Html.EditorFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password)
         @Html.ValidationMessageFor(m => m.Password)
     </div>
     <div class="input-group">

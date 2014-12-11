@@ -467,7 +467,7 @@ input, textarea {
     }
 }
 
-.has-error {
+.field-validation-error {
     color: red;
     margin: 0.3em;
 }
