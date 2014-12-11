@@ -152,7 +152,9 @@ nav {
 .user {
   float: right;
   width: 35%;
-  text-align: right; }
+  text-align: right;
+  font-size:10px;
+}
 
 .header {
   padding: 0.5em;

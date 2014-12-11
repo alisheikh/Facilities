@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBCFM.Models
 {
+    [Table("WebJob")] 
     public class Job
     {
         [Key]
@@ -26,5 +25,6 @@ namespace MBCFM.Models
         public string CostsOfMaterials { get; set; }
         public string MaterialsRequired { get; set; }
         public string DurationToCompletion { get; set; }
+        public bool HelpDeskNotified { get; set; }
     }
 }

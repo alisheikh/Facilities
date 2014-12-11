@@ -37,6 +37,8 @@
             @if (User.Identity.IsAuthenticated)
             {
                 <p class="user">Logged In as @User.Identity.Name</p>
+                @Html.ActionLink("Add User", "AddUser", "Account", null, new { @class = "user" })
+                @Html.ActionLink("Change Password", "ChangePassword", "Account", null, new { @class = "user" })
                 @Html.ActionLink("Log Off", "LogOff", "Account", null, new { @class = "user" })
             }
         </div>
