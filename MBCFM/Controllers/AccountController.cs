@@ -17,12 +17,14 @@ namespace MBCFM.Controllers
 
         //Salt length
         private const int saltSize = PWDTK.CDefaultSaltLength + 2;
+
         [AllowAnonymous]
         [HttpGet]
         public ActionResult Login()
         {
             return View();
         }
+
         [AllowAnonymous]
         [HttpPost]
         public ActionResult Login(string username, string password)
