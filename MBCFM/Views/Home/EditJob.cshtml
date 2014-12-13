@@ -73,11 +73,15 @@
         <div class="action">
             <button type="submit" class="button">Update</button>
         </div>
-
-        <a class="big button" href="#">
+    }
+    <br/>
+    @using(Html.BeginForm("SendToHelpDesk", "Home"))
+    {
+        <input type="hidden" name="mbcJobNo" value="@Model.JobData.Job.MbcJobNo" />
+        <button type="submit" class="big button">
             <h4>Resolve</h4>
             <p>Will close this job and send to Help Desk</p>
-        </a>
+        </button>
     }
     <div class="clearfix"></div>
 </article>

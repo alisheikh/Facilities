@@ -12,11 +12,19 @@ namespace MBCFM.Controllers
     {
         public ActionResult Index()
         {
+            if (Helpers.GetUserType() == "Helpdesk Operator")
+            {
+                return RedirectToAction("Notification");
+            }
+
             IEnumerable<MergedJob> jobs = null;
             //goes to database to get list of jobs for the current user
             using (var db = new JobsContext())
             {
-                jobs = Helpers.GetMergedJobsQuery(db).Where(mj => mj.Job.UserName == User.Identity.Name && mj.Job.CurrentStatus.ToLower() != "closed").ToList();
+                var username = Helpers.GetUserName();
+                jobs = Helpers.GetMergedJobsQuery(db).Where(mj => mj.Job.UserName == username &&
+                    ((mj.ExtraData.HelpDeskNotified.HasValue && !mj.ExtraData.HelpDeskNotified.Value) || mj.ExtraData == null)
+                    && mj.Job.CurrentStatus.ToLower() != "closed").ToList();
             }
 
             return View(jobs);
@@ -25,11 +33,16 @@ namespace MBCFM.Controllers
         [HttpGet]
         public ActionResult EditJob(int mbcJobNo)
         {
+            if (Helpers.GetUserType() == "Helpdesk Operator")
+            {
+                return RedirectToAction("Notification");
+            }
             JobView view = new JobView();
             using (var db = new JobsContext())
             {
+                var username = Helpers.GetUserName();
                 view.JobData = Helpers.GetMergedJobsQuery(db).Where(mj => mj.Job.MbcJobNo == mbcJobNo).FirstOrDefault();
-                view.User = db.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
+                view.User = db.Users.Where(u => u.UserName == username).FirstOrDefault();
             }
 
             return View(view);
@@ -83,24 +96,56 @@ namespace MBCFM.Controllers
 
         public ActionResult ViewJob(int mbcJobNo)
         {
-            JobView view = new JobView();
+            var view = new JobView();
             using (var db = new JobsContext())
             {
+                var username = Helpers.GetUserName();
                 view.JobData = Helpers.GetMergedJobsQuery(db).Where(mj => mj.Job.MbcJobNo == mbcJobNo).FirstOrDefault();
-                view.User = db.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
+                view.User = db.Users.Where(u => u.UserName == username).FirstOrDefault();
             }
 
             return View(view);
         }
 
-        public ActionResult ViewNotifications()
+        public ActionResult Notification()
         {
+            if (Helpers.GetUserType() == "Sub Contractor")
+            {
+                return RedirectToAction("Index");
+            }
             IEnumerable<MergedJob> jobs = null;
             using (var db = new JobsContext())
             {
-                jobs = Helpers.GetMergedJobsQuery(db).Where(mj => mj.ExtraData != null && mj.ExtraData.HelpDeskNotified.HasValue && mj.ExtraData.HelpDeskNotified.Value);
+                jobs = Helpers.GetMergedJobsQuery(db).Where(mj => mj.ExtraData != null
+                    && mj.ExtraData.HelpDeskNotified.HasValue && mj.ExtraData.HelpDeskNotified.Value).ToList();
             }
             return View(jobs);
+        }
+
+        [HttpPost]
+        public ActionResult SendToHelpdesk(int mbcJobNo)
+        {
+            using (var db = new JobsContext())
+            {
+                var extraData = db.ExtraJobs.Where(ed => ed.MBCJobNo == mbcJobNo).FirstOrDefault();
+                if (extraData == null)
+                {
+                    //doesn't exists so create a new entry
+                    extraData = new ExtraJobData
+                    {
+                        MBCJobNo = mbcJobNo,
+                        HelpDeskNotified = true
+                    };
+                    db.ExtraJobs.Add(extraData);
+                }
+                else
+                {
+                    //exists so update the field
+                    extraData.HelpDeskNotified = true;
+                }
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
         }
     }
 }

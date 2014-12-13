@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MBCFM.Models.User>
+
+<h2>Users</h2>
+@if (Model.Count() > 0)
+{
+    <table width="80%">
+        <thead>
+            <tr class="header">
+                <td>User Name</td>
+                <td>Full Name</td>
+                <td>Type</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr class="details">
+                    <td>@user.UserName</td>
+                    <td>@user.FullName</td>
+                    <td>@user.UserType</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>There are no users in the database!</p>
+}
+<br />
+<a class="big button" href="@Url.Action("AddUser", "Account")">
+    <h4>Add User</h4>
+    <p>Will add a new user</p>
+</a>
+

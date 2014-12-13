@@ -43,7 +43,12 @@ namespace MBCFM.Controllers
 
             if (success)
             {
-                FormsAuthentication.SetAuthCookie(user.UserName, false);
+                //creates a username based on the user name and the type
+                //just as there can be only a sinlge type for as user and its silly to implment roles when there are not needed
+                //so this seems a good compromise, as the type will be stored in the cookie along with the username,
+                //so now need for a trip to the database for every user type check.
+                var cookieName = string.Format("{0} ({1})", user.UserName, user.UserType);
+                FormsAuthentication.SetAuthCookie(cookieName, false);
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -71,7 +76,8 @@ namespace MBCFM.Controllers
             var salt = PWDTK.GetRandomSalt(saltSize);
             using (var db = new JobsContext())
             {
-                var user = db.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
+                var username = Helpers.GetUserName();
+                var user = db.Users.Where(u => u.UserName == username).FirstOrDefault();
                 if (user != null && PWDTK.ComparePasswordToHash(user.Salt, oldPassword, user.Password, iterations))
                 {
                     user.Salt = salt;
@@ -95,28 +101,73 @@ namespace MBCFM.Controllers
 
 
         [HttpPost]
-        public ActionResult AddUser(string userName, string password, string fullName)
+        public ActionResult AddUser(string userName, string password, string confirmation, string fullName, string userType)
         {
-            var salt = PWDTK.GetRandomSalt(saltSize);
+            if (userType == "-Select User Type-")
+            {
+                ModelState.AddModelError("UserType", "You must select a user type");
+            }
+            if (string.IsNullOrWhiteSpace(userName) && userName.Trim().Length <= 6)
+            {
+                ModelState.AddModelError("UserName", "User Name must be at least 6 characters in length");
+            }
+            if (string.IsNullOrWhiteSpace(password) && userName.Trim().Length <= 6)
+            {
+                ModelState.AddModelError("Password", "Password must be at least 6 characters in length");
+            }
+            if (string.IsNullOrWhiteSpace(fullName))
+            {
+                ModelState.AddModelError("FullName", "Full Name is required");
+            }
+            if (password != confirmation)
+            {
+                ModelState.AddModelError("Password", "Password and confirmation must match");
+            }
+
+            if (ModelState.IsValid)
+            {
+                var salt = PWDTK.GetRandomSalt(saltSize);
+                using (var db = new JobsContext())
+                {
+                    if (db.Users.Where(u => u.UserName == userName).Any())
+                    {
+                        ModelState.AddModelError("UserName", "User Name already exits, please choose a different one");
+                        return View();
+                    }
+
+                    var user = new User
+                    {
+                        Salt = salt,
+                        UserName = userName,
+                        FullName = fullName,
+                        Password = PWDTK.PasswordToHash(salt, password, iterations),
+                        UserType = userType
+                    };
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                }
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public ActionResult ShowUsers()
+        {
+            if (Helpers.GetUserType() != "Administrator")
+            {
+                return RedirectToAction("Index");
+            }
+
+            IEnumerable<User> users = null;
             using (var db = new JobsContext())
             {
-                if (db.Users.Where(u => u.UserName == userName).Any())
-                {
-                    ModelState.AddModelError("UserName", "User Name already exits, please choose a different one");
-                    return View();
-                }
-
-                var user = new User
-                {
-                    Salt = salt,
-                    UserName = userName,
-                    FullName = fullName,
-                    Password = PWDTK.PasswordToHash(salt, password, iterations)
-                };
-                db.Users.Add(user);
-                db.SaveChanges();
+                users = db.Users.OrderBy(u => u.FullName).ToList();
             }
-            return RedirectToAction("Index", "Home");
+
+            return View(users);
         }
     }
 }

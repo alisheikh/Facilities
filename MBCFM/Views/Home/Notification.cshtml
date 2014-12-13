@@ -2,7 +2,8 @@
 <h3 class="header">Jobs Sent to Helpdesk</h3>
 
 @if (Model.Count() > 0)
-{<ul class="job-list box">
+{
+    <ul class="job-list box">
         @foreach (var merged in Model)
         {
             <li>

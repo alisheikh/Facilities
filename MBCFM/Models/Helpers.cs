@@ -37,5 +37,31 @@ namespace MBCFM.Models
                 return dateTime.Value.ToString("yyyy/MM/dd HH:mm");
             }
         }
+
+        public static string GetUserType()
+        {
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                var name = HttpContext.Current.User.Identity.Name;
+                int pos = name.IndexOf('(');
+                var type = name.Substring(pos+1, (name.Length - pos-2));
+                return type;
+            }
+            else
+                return string.Empty;
+        }
+
+        public static string GetUserName()
+        {
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                var name = HttpContext.Current.User.Identity.Name;
+                int pos = name.IndexOf('(');
+                var type = name.Substring(0, pos);
+                return type;
+            }
+            else
+                return string.Empty;
+        }
     }
 }
