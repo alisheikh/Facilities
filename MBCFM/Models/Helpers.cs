@@ -63,5 +63,17 @@ namespace MBCFM.Models
             else
                 return string.Empty;
         }
+
+        public static JobsContext AddExtraJobData(JobsContext db, ExtraJobData extraData, int mbcJobNo, bool notify) 
+        {
+            extraData = new ExtraJobData
+            {
+                MBCJobNo = mbcJobNo,
+                HelpDeskNotified = notify
+            };
+            db.ExtraJobs.Add(extraData);
+
+            return db;
+        }
     }
 }

@@ -116,8 +116,11 @@ namespace MBCFM.Controllers
             IEnumerable<MergedJob> jobs = null;
             using (var db = new JobsContext())
             {
-                jobs = Helpers.GetMergedJobsQuery(db).Where(mj => mj.ExtraData != null
-                    && mj.ExtraData.HelpDeskNotified.HasValue && mj.ExtraData.HelpDeskNotified.Value).ToList();
+                //jobs = Helpers.GetMergedJobsQuery(db).Where(mj => mj.ExtraData != null
+                jobs = Helpers.GetMergedJobsQuery(db).Where(mj => mj.Job.CurrentStatus !="Closed"
+                //jobs = Helpers.GetMergedJobsQuery(db
+                    ).ToList();
+                    //&& mj.ExtraData.HelpDeskNotified.HasValue && mj.ExtraData.HelpDeskNotified.Value).ToList();
             }
             return View(jobs);
         }
@@ -131,12 +134,8 @@ namespace MBCFM.Controllers
                 if (extraData == null)
                 {
                     //doesn't exists so create a new entry
-                    extraData = new ExtraJobData
-                    {
-                        MBCJobNo = mbcJobNo,
-                        HelpDeskNotified = true
-                    };
-                    db.ExtraJobs.Add(extraData);
+                    Helpers.AddExtraJobData(db, extraData, mbcJobNo, true);
+
                 }
                 else
                 {

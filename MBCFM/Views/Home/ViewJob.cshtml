@@ -14,7 +14,7 @@
             <p class="order-status"><span class="label">Status</span><span class="info">@Model.JobData.Job.CurrentStatus</span></p>
         </div>
         <div>
-            <p class="half">Sub Contractor <strong>@Model.User.FullName</strong></p>
+            <p class="half">Sub Contractor <strong>@Model.JobData.Job.UserName</strong></p>
             <p class="half">Entered by <strong>@Model.JobData.Job.EnteredBy</strong></p>
             <span class="clearfix"></span>
         </div>
@@ -36,20 +36,26 @@
     </div>
     <div class="half">
         <label>Depature Time</label>
-        <p class="half">"@MBCFM.Models.Helpers.ConvertDateTime(Model.JobData.Job.DepartureTime)</p>
+        <p class="half">@MBCFM.Models.Helpers.ConvertDateTime(Model.JobData.Job.DepartureTime)</p>
     </div>
+@if (Model.JobData.ExtraData != null)
+{
     <div>
         <label>Materials Used</label>
+
         <p class="half">@Model.JobData.ExtraData.MaterialsUsed</p>
-    </div>
-    <div>
-        <label>Costs Of Materials Purchased</label>
-        <p class="half">@Model.JobData.Job.CostsOfMaterials</p>
     </div>
     <div>
         <label>Materials Required</label>
         <p class="half">@Model.JobData.ExtraData.MaterialsRequired</p>
     </div>
+}
+
+    <div>
+        <label>Costs Of Materials Purchased</label>
+        <p class="half">@Model.JobData.Job.CostsOfMaterials</p>
+    </div>
+
     <div class="half">
         <label>Work Completed</label>
 

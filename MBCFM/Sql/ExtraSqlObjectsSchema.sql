@@ -1,4 +1,5 @@
-﻿
+﻿USE [FMHelpdeskSQLV4]
+GO
 
 CREATE TABLE [dbo].[WebExtraJobData](
 	[MBCJobNo] [int] NOT NULL,
@@ -14,8 +15,7 @@ CREATE TABLE [dbo].[WebExtraJobData](
 GO
 
 
-USE [FMHelpdeskSQLV4]
-GO
+
 
 CREATE TABLE [dbo].[WebUsers](
 	[UserName] [varchar](50) NOT NULL,
