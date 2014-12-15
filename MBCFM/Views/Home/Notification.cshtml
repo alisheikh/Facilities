@@ -1,29 +1,30 @@
-﻿@model IEnumerable<MBCFM.Models.MergedJob>
+﻿<!-- I've changed the model to the new notification class which has 2 collections of jobs
+    as the model is now a single class (with collection properties) we now just check the relevant property -->
+@model MBCFM.Models.NotificationView
 <h3 class="header">Resolved By Engineers</h3>
 
-@if (Model.Count() > 0)
+@if (Model.HelpdeskJobs.Count() > 0)
 {
     <ul class="job-list box">
-        @foreach (var merged in Model)
+        @foreach (var merged in Model.HelpdeskJobs)
         {
-            if (merged.ExtraData != null && merged.ExtraData.HelpDeskNotified.HasValue && merged.ExtraData.HelpDeskNotified.Value)
-            {
-                <li>
-                    <div class="priority"><span>Priority</span><span class="number">@merged.Job.Priority</span></div>
+            //we don't need this now as we can include the two seperate queries in the controller and filer result driectly in the query
+            //if (merged.ExtraData != null && merged.ExtraData.HelpDeskNotified.HasValue && merged.ExtraData.HelpDeskNotified.Value)
 
-                    <div class="job-details">
-                        <p class="client-job-number">Client Job # <span class="number">@merged.Job.ClientJobNo</span></p>
-                        <h1><span class="mbc-job-number">#@merged.Job.MbcJobNo</span> - <span class="job-title">@merged.Job.ClientName</span></h1>
-                        <p class="order-type"><span class="label">Order Type</span><span class="info">@merged.Job.OrderType</span></p>
-                        <p class="order-status"><span class="label">Status</span><span class="info">@merged.Job.CurrentStatus</span></p>
-                    </div>
-                    <div class="action">
-                        @Html.ActionLink("View", "ViewJob", new { mbcJobNo = merged.Job.MbcJobNo }, new { @class = "button" })
-                    </div>
-                    <div class="clearfix"></div>
-                </li>
-            }
+            <li>
+                <div class="priority"><span>Priority</span><span class="number">@merged.Job.Priority</span></div>
 
+                <div class="job-details">
+                    <p class="client-job-number">Client Job # <span class="number">@merged.Job.ClientJobNo</span></p>
+                    <h1><span class="mbc-job-number">#@merged.Job.MbcJobNo</span> - <span class="job-title">@merged.Job.ClientName</span></h1>
+                    <p class="order-type"><span class="label">Order Type</span><span class="info">@merged.Job.OrderType</span></p>
+                    <p class="order-status"><span class="label">Status</span><span class="info">@merged.Job.CurrentStatus</span></p>
+                </div>
+                <div class="action">
+                    @Html.ActionLink("View", "ViewJob", new { mbcJobNo = merged.Job.MbcJobNo }, new { @class = "button" })
+                </div>
+                <div class="clearfix"></div>
+            </li>
         }
     </ul>
 }
@@ -35,29 +36,27 @@ else
 
 <h3 class="header">Open Jobs</h3>
 
-@if (Model.Count() > 0)
+@if (Model.OpenJobs.Count() > 0)
 {
     <ul class="job-list box">
-        @foreach (var merged in Model)
+        @foreach (var merged in Model.OpenJobs)
         {
-            if ((merged.ExtraData == null) || (merged.ExtraData.HelpDeskNotified.HasValue && !merged.ExtraData.HelpDeskNotified.Value))
-            {
-                <li>
-                    <div class="priority"><span>Priority</span><span class="number">@merged.Job.Priority</span></div>
+            //see comment above
+            //if ((merged.ExtraData == null) || (merged.ExtraData.HelpDeskNotified.HasValue && !merged.ExtraData.HelpDeskNotified.Value))
+            <li>
+                <div class="priority"><span>Priority</span><span class="number">@merged.Job.Priority</span></div>
 
-                    <div class="job-details">
-                        <p class="client-job-number">Client Job # <span class="number">@merged.Job.ClientJobNo</span></p>
-                        <h1><span class="mbc-job-number">#@merged.Job.MbcJobNo</span> - <span class="job-title">@merged.Job.ClientName</span></h1>
-                        <p class="order-type"><span class="label">Order Type</span><span class="info">@merged.Job.OrderType</span></p>
-                        <p class="order-status"><span class="label">Status</span><span class="info">@merged.Job.CurrentStatus</span></p>
-                    </div>
-                    <div class="action">
-                        @Html.ActionLink("View", "ViewJob", new { mbcJobNo = merged.Job.MbcJobNo }, new { @class = "button" })
-                    </div>
-                    <div class="clearfix"></div>
-                </li>
-            }
-
+                <div class="job-details">
+                    <p class="client-job-number">Client Job # <span class="number">@merged.Job.ClientJobNo</span></p>
+                    <h1><span class="mbc-job-number">#@merged.Job.MbcJobNo</span> - <span class="job-title">@merged.Job.ClientName</span></h1>
+                    <p class="order-type"><span class="label">Order Type</span><span class="info">@merged.Job.OrderType</span></p>
+                    <p class="order-status"><span class="label">Status</span><span class="info">@merged.Job.CurrentStatus</span></p>
+                </div>
+                <div class="action">
+                    @Html.ActionLink("View", "ViewJob", new { mbcJobNo = merged.Job.MbcJobNo }, new { @class = "button" })
+                </div>
+                <div class="clearfix"></div>
+            </li>
         }
     </ul>
 }
