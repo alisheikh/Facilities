@@ -147,6 +147,7 @@
     <Content Include="Content\.sass-cache\2481b0046479ddbdecd30da763540a8991e5fc1c\main.scssc" />
     <Content Include="Content\main.scss" />
     <None Include="Properties\PublishProfiles\rackspace.pubxml" />
+    <None Include="Properties\PublishProfiles\rackspaceremote.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

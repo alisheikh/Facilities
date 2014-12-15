@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="marshallTest" />
+  <setParameter name="JobsContext-Web.config Connection String" value="Data Source=oe-dev\rappsdplocal;Initial Catalog=FMHelpdeskSQLV4;Integrated Security=True" />
+</parameters>
