@@ -113,16 +113,23 @@ namespace MBCFM.Controllers
             {
                 return RedirectToAction("Index");
             }
-            IEnumerable<MergedJob> jobs = null;
+            var model = new NotificationView();
             using (var db = new JobsContext())
             {
-                //jobs = Helpers.GetMergedJobsQuery(db).Where(mj => mj.ExtraData != null
-                jobs = Helpers.GetMergedJobsQuery(db).Where(mj => mj.Job.CurrentStatus !="Closed"
-                //jobs = Helpers.GetMergedJobsQuery(db
-                    ).ToList();
-                    //&& mj.ExtraData.HelpDeskNotified.HasValue && mj.ExtraData.HelpDeskNotified.Value).ToList();
+                //we use 2 distinct queires to pull back the result we need for each collection
+                //here we are using the base query defined in the helper (which bascially does an left outer join on the view and the extradata table)
+                //the nice thing with linq is that is lazy loading so until to iterate through a collection (i.e. foreach) or run a set operation (.ToList())
+                //it won't run a query. this means we can kepp adding filters, etc until we need to get the data :)
+
+                //so the ToList on the end of this forces the entity framwork to go to the database and put the results in the jelpdeskJobs property of the model class
+                model.HelpdeskJobs = Helpers.GetMergedJobsQuery(db).Where(mj => mj.ExtraData != null
+                    && mj.ExtraData.HelpDeskNotified.HasValue && mj.ExtraData.HelpDeskNotified.Value && mj.Job.CurrentStatus !="Closed").ToList();
+
+                //and the same here, we use the base query from the help with different filters and the tolist to set the property of the model
+                model.OpenJobs=Helpers.GetMergedJobsQuery(db).Where(mj => (mj.ExtraData == null || (mj.ExtraData!=null && mj.ExtraData.HelpDeskNotified==false))
+                    && mj.Job.CurrentStatus !="Closed").ToList();
             }
-            return View(jobs);
+            return View(model);
         }
 
         [HttpPost]
