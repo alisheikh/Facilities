@@ -26,7 +26,7 @@
                 <ul>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        if (userType == "Administrator" || userType == "Sub Contractor")
+                        if (userType == "Sub Contractor")
                         {
                             <li>@Html.ActionLink("Job List", "Index", "Home")</li>
                         }

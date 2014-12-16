@@ -33,7 +33,7 @@ namespace MBCFM.Controllers
         [HttpGet]
         public ActionResult EditJob(int mbcJobNo)
         {
-            if (Helpers.GetUserType() == "Helpdesk Operator" || Helpers.GetUserType() == "Administrator")
+            if (Helpers.GetUserType() == "Helpdesk Operator")
             {
                 return RedirectToAction("Notification");
             }
