@@ -49,7 +49,7 @@ namespace MBCFM.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditJob(int mbcJobNo, DateTime? arrivalTime, DateTime? departureTime, string materialsUsed, string costsOfMaterials, string materialsRequired, string durationToCompletion)
+        public ActionResult EditJob(int mbcJobNo, DateTime? arrivalTime, DateTime? departureTime, string materialsUsed, string costsOfMaterials, string materialsRequired, string durationToCompletion, string siteNotes)
         {
             using (var db = new JobsContext())
             {
@@ -58,6 +58,7 @@ namespace MBCFM.Controllers
                 {
                     job.ArrivalTime = arrivalTime;
                     job.DepartureTime = departureTime;
+                    job.siteNotes = siteNotes;
                     decimal costs;
                     decimal.TryParse(costsOfMaterials, out costs);
                     if (costs > 0)

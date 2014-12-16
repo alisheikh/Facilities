@@ -21,6 +21,11 @@ namespace MBCFM.Models
         public string UserName { get; set; }
         public string EnteredBy { get; set; }
         public string Notes { get; set; }
+        public string siteNotes { get; set; }
+        public string siteName { get; set; }
+        public string siteAddress { get; set; }
+        public string siteTown { get; set; }
+        public string siteCounty { get; set; }
         public DateTime? ArrivalTime { get; set; }
         public DateTime? DepartureTime { get; set; }
         public decimal? CostsOfMaterials { get; set; }
