@@ -12,7 +12,7 @@ namespace MBCFM.Controllers
     {
         public ActionResult Index()
         {
-            if (Helpers.GetUserType() == "Helpdesk Operator")
+            if (Helpers.GetUserType() == "Helpdesk Operator" || Helpers.GetUserType() == "Administrator")
             {
                 return RedirectToAction("Notification");
             }
@@ -33,7 +33,7 @@ namespace MBCFM.Controllers
         [HttpGet]
         public ActionResult EditJob(int mbcJobNo)
         {
-            if (Helpers.GetUserType() == "Helpdesk Operator")
+            if (Helpers.GetUserType() == "Helpdesk Operator" || Helpers.GetUserType() == "Administrator")
             {
                 return RedirectToAction("Notification");
             }
