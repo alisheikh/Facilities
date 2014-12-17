@@ -52,7 +52,7 @@
     </div>
 @if (Model.JobData.ExtraData != null)
 {
-    <div>
+    @*<div>
         <label>Materials Used &amp; Costs</label>
 
         <p class="half">@Model.JobData.ExtraData.MaterialsUsed</p>
@@ -60,7 +60,7 @@
     <div>
         <label>Materials Required</label>
         <p class="half">@Model.JobData.ExtraData.MaterialsRequired</p>
-    </div>
+    </div>*@
 }
 
     <div>
@@ -68,14 +68,14 @@
         <p class="">@Model.JobData.Job.siteNotes</p>
     </div>
 
-    <div class="half">
+    @*<div class="half">
         <label>Work Completed</label>
 
     </div>
     <div class="half">
         <label>Duration Require to complete</label>
-        @*<p class="half">@Model.JobData.Job.DurationToCompletion</p>*@
-    </div>
+        @*<p class="half">@Model.JobData.Job.DurationToCompletion</p>
+    </div>*@
     <span class="clearfix"></span>
 
     <div class="clearfix"></div>
