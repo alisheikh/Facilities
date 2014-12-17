@@ -44,11 +44,11 @@
     <h3>Details</h3>
     <div class="half">
         <label>Arrival Time</label>
-        <p class="half">@MBCFM.Models.Helpers.ConvertDateTime(Model.JobData.Job.ArrivalTime)</p>
+        <p class="half">@Model.JobData.Job.ArrivalTime</p>
     </div>
     <div class="half">
         <label>Depature Time</label>
-        <p class="half">@MBCFM.Models.Helpers.ConvertDateTime(Model.JobData.Job.DepartureTime)</p>
+        <p class="half">@Model.JobData.Job.DepartureTime</p>
     </div>
 @if (Model.JobData.ExtraData != null)
 {
@@ -74,7 +74,7 @@
     </div>
     <div class="half">
         <label>Duration Require to complete</label>
-        <p class="half">@Model.JobData.Job.DurationToCompletion</p>
+        @*<p class="half">@Model.JobData.Job.DurationToCompletion</p>*@
     </div>
     <span class="clearfix"></span>
 

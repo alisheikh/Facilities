@@ -24,7 +24,7 @@ namespace MBCFM.Controllers
                 var username = Helpers.GetUserName();
                 jobs = Helpers.GetMergedJobsQuery(db).Where(mj => mj.Job.UserName == username &&
                     ((mj.ExtraData.HelpDeskNotified.HasValue && !mj.ExtraData.HelpDeskNotified.Value) || mj.ExtraData == null)
-                    && mj.Job.CurrentStatus.ToLower() != "closed").ToList();
+                    && !(mj.Job.CurrentStatus.ToLower() == "closed" || mj.Job.CurrentStatus.ToLower() == "resolved by engineer")).ToList();
             }
 
             return View(jobs);
@@ -49,49 +49,34 @@ namespace MBCFM.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditJob(int mbcJobNo, DateTime? arrivalTime, DateTime? departureTime, string materialsUsed, string costsOfMaterials, string materialsRequired, string durationToCompletion, string siteNotes)
+        public ActionResult EditJob(int mbcJobNo, string arrivalTime, string departureTime, string materialsUsed, string costOfMaterials, string materialsRequired, string siteNotes, string tableName)
+        //public ActionResult EditJob(int mbcJobNo, DateTime? arrivalTime, DateTime? departureTime, string materialsUsed, string costsOfMaterials, string materialsRequired, string durationToCompletion, string siteNotes)
         {
             using (var db = new JobsContext())
             {
                 var job = db.Jobs.Where(j => j.MbcJobNo == mbcJobNo).FirstOrDefault();
                 if (job != null)
                 {
-                    job.ArrivalTime = arrivalTime;
-                    job.DepartureTime = departureTime;
-                    job.siteNotes = siteNotes;
-                    decimal costs;
-                    decimal.TryParse(costsOfMaterials, out costs);
-                    if (costs > 0)
-                        job.CostsOfMaterials = costs;
-                    job.DurationToCompletion = durationToCompletion;
 
-                    //only update the extra data if we need to
-                    if (!string.IsNullOrWhiteSpace(materialsRequired) || !string.IsNullOrWhiteSpace(materialsUsed))
-                    {
-                        var extraData = db.ExtraJobs.Where(ed => ed.MBCJobNo == mbcJobNo).FirstOrDefault();
-                        if (extraData == null)
-                        {
-                            //doesn't exists so create a new entry
-                            extraData = new ExtraJobData
-                            {
-                                MaterialsRequired = materialsRequired,
-                                MaterialsUsed = materialsUsed,
-                                MBCJobNo = mbcJobNo,
-                                HelpDeskNotified = false
-                            };
-                            db.ExtraJobs.Add(extraData);
-                        }
-                        else
-                        {
-                            //exists so update the fields
-                            extraData.MaterialsRequired = materialsRequired;
-                        }
-                    }
+                    db.Database.ExecuteSqlCommand("update " + tableName +
+                        " set siteNotes = '" + siteNotes + "'" +
+                        " ,timeOnSite = '" + arrivalTime + "'" +
+                        " ,timeOffSite = '" + departureTime + "'" + 
 
-                    //saves database changes in one transaction
-                    db.SaveChanges();
+                        "where [MBC Job No] = " +  mbcJobNo);
+
+                }
+            
+
+                if (Request.Form["resolve"] != null)
+                {
+
+                db.Database.ExecuteSqlCommand("update " + tableName +
+                        " set currentStatus = 'Resolved by Engineer'" +
+                        "where [MBC Job No] = " + mbcJobNo);
                 }
             }
+
             return RedirectToAction("Index");
         }
 
@@ -123,12 +108,9 @@ namespace MBCFM.Controllers
                 //it won't run a query. this means we can kepp adding filters, etc until we need to get the data :)
 
                 //so the ToList on the end of this forces the entity framwork to go to the database and put the results in the jelpdeskJobs property of the model class
-                model.HelpdeskJobs = Helpers.GetMergedJobsQuery(db).Where(mj => mj.ExtraData != null
-                    && mj.ExtraData.HelpDeskNotified.HasValue && mj.ExtraData.HelpDeskNotified.Value && mj.Job.CurrentStatus !="Closed").ToList();
+                model.HelpdeskJobs = Helpers.GetMergedJobsQuery(db).Where(mj => mj.Job.CurrentStatus.ToLower() == "resolved by engineer").ToList();
 
-                //and the same here, we use the base query from the help with different filters and the tolist to set the property of the model
-                model.OpenJobs=Helpers.GetMergedJobsQuery(db).Where(mj => (mj.ExtraData == null || (mj.ExtraData!=null && mj.ExtraData.HelpDeskNotified==false))
-                    && mj.Job.CurrentStatus !="Closed").ToList();
+                model.OpenJobs = Helpers.GetMergedJobsQuery(db).Where(mj => !(mj.Job.CurrentStatus.ToLower() == "resolved by engineer" || mj.Job.CurrentStatus.ToLower() == "closed")).ToList();
             }
             return View(model);
         }

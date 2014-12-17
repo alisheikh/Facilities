@@ -31,15 +31,6 @@ CREATE TABLE [dbo].[WebUsers](
 
 GO
 
-CREATE VIEW [dbo].[WebJobs]
-AS
-SELECT     [MBC Job No], [Client Job No], Priority, SiteNo AS ClientName, currentStatus, OrderType, SiteTelNo AS SitePhoneNo, Problem, SubContractor AS UserName, 
-                      Note AS Notes, timeOnSite AS ArrivalTime, timeOffSite AS DepartureTime, materials AS CostsOfMaterials, EnteredBy, 
-                      estimatedTimeOfCompletion AS DurationToCompletion, siteNotes, siteName, siteAddress, siteTown, siteCounty
-FROM         dbo.FMIncidentsFM261 AS J
-
-GO
-
 -- Add siteNotes to Reactive Table
 BEGIN TRANSACTION
 GO
@@ -85,6 +76,7 @@ j.siteAddress,
 j.siteTown,
 j.siteCounty,
 j.siteNotes
+, 'FMIncidentsFM261' as tableName
 FROM            dbo.FMIncidentsFM261 as j
 
 union all
@@ -108,7 +100,7 @@ j.siteName,
 j.siteAddress,
 j.siteTown,
 j.siteCounty,
-j.siteNotes
+j.siteNotes, 'reactiveCallOut' as tableName
 
 FROM             dbo.reactiveCallOut as j
                         

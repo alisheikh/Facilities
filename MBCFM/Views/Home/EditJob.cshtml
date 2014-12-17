@@ -49,14 +49,14 @@
         @Html.AntiForgeryToken()
         @Html.HiddenFor(m => m.JobData.Job.MbcJobNo)
         <div class="form">
-
+            <input type="text" hidden name="tableName" value="@Model.JobData.Job.tableName" />
             <div class="half">
                 <label>Arrival Time</label>
-                <input type="text" class="dtpicker" name="ArrivalTime" value="@MBCFM.Models.Helpers.ConvertDateTime(Model.JobData.Job.ArrivalTime)" />
+                <input type="text" class="dtpicker" name="ArrivalTime" value="@Model.JobData.Job.ArrivalTime" />
             </div>
             <div class="half">
                 <label>Depature Time</label>
-                <input type="text" class="dtpicker" name="departureTime" value="@MBCFM.Models.Helpers.ConvertDateTime(Model.JobData.Job.DepartureTime)" />
+                <input type="text" class="dtpicker" name="departureTime" value="@Model.JobData.Job.DepartureTime" />
             </div>
             <div>
                 <label>Materials Used &amp; Costs</label>
@@ -83,18 +83,17 @@
         </div>
 
         <div class="action">
-            <button type="submit" class="button">Update</button>
+            <button type="submit" class="button" name="update">Update</button>
         </div>
-    }
-    <br/>
-    @using(Html.BeginForm("SendToHelpDesk", "Home"))
-    {
-        <input type="hidden" name="mbcJobNo" value="@Model.JobData.Job.MbcJobNo" />
-        <button type="submit" class="big button">
+    <div class="action">
+        <button type="submit" class="big button" name="resolve">
             <h4>Resolve</h4>
             <p>Will close this job and send to Help Desk</p>
         </button>
+    </div>
     }
+    <br/>
+
     <div class="clearfix"></div>
 </article>
 
