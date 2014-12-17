@@ -9,6 +9,18 @@
     </div>
     <div class="details">
         <div class="">
+            <p class="site-address"><span class="label">Site Address</span></p>
+            <p> <span class="info">@Model.JobData.Job.siteName</span> </p>
+
+            <p>  <span class="info">@Model.JobData.Job.siteAddress</span>  </p>
+            <p>
+                <span class="info">@Model.JobData.Job.siteTown</span>
+            </p>
+            <p>
+                <span class="info">@Model.JobData.Job.siteCounty</span>
+            </p>
+            <br />
+
             <p class="site-tel"><span class="label">Site Tel No</span><span class="info">@Model.JobData.Job.SitePhoneNo</span></p>
             <p class="order-type"><span class="label">Order Type</span><span class="info">@Model.JobData.Job.OrderType</span></p>
             <p class="order-status"><span class="label">Status</span><span class="info">@Model.JobData.Job.CurrentStatus</span></p>
@@ -41,7 +53,7 @@
 @if (Model.JobData.ExtraData != null)
 {
     <div>
-        <label>Materials Used</label>
+        <label>Materials Used &amp; Costs</label>
 
         <p class="half">@Model.JobData.ExtraData.MaterialsUsed</p>
     </div>
@@ -52,8 +64,8 @@
 }
 
     <div>
-        <label>Costs Of Materials Purchased</label>
-        <p class="half">@Model.JobData.Job.CostsOfMaterials</p>
+        <label>Site Notes</label>
+        <p class="">@Model.JobData.Job.siteNotes</p>
     </div>
 
     <div class="half">

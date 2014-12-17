@@ -59,7 +59,7 @@
                 <input type="text" class="dtpicker" name="departureTime" value="@MBCFM.Models.Helpers.ConvertDateTime(Model.JobData.Job.DepartureTime)" />
             </div>
             <div>
-                <label>Materials Used &Aacute; Costs</label>
+                <label>Materials Used &amp; Costs</label>
                 <textarea name="materialsUsed">@(Model.JobData.ExtraData != null ? Model.JobData.ExtraData.MaterialsUsed : string.Empty)</textarea>
             </div>
             <div>
@@ -76,7 +76,7 @@
             </div>
             <div class="half">
                 <label>Duration Require to complete</label>
-                <input type="text" name="durationToCompletion" value="@Model.JobData.Job.DurationToCompletion">
+                @*<input type="text" name="durationToCompletion" value="@Model.JobData.Job.DurationToCompletion">*@
             </div>
             <span class="clearfix"></span>
 
