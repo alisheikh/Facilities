@@ -1,22 +1,6 @@
 ﻿USE [FMHelpdeskSQLV4]
 GO
 
-CREATE TABLE [dbo].[WebExtraJobData](
-	[MBCJobNo] [int] NOT NULL,
-	[HelpDeskNotified] [bit] NULL,
-	[MaterialsUsed] [varchar](max) NULL,
-	[MaterialsRequired] [varchar](max) NULL,
- CONSTRAINT [PK_WebExtraJobData] PRIMARY KEY CLUSTERED 
-(
-	[MBCJobNo] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-
-
-
-
 CREATE TABLE [dbo].[WebUsers](
 	[UserName] [varchar](50) NOT NULL,
 	[Password] [varbinary](max) NOT NULL,
@@ -54,7 +38,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE VIEW [dbo].[WebJobsJoined]
+CREATE VIEW [dbo].[WebJobs]
 AS
 SELECT        
 J.[MBC Job No], 

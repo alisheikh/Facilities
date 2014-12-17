@@ -8,6 +8,5 @@ namespace MBCFM.Models
     public class MergedJob
     {
         public Job Job { get; set; }
-        public ExtraJobData  ExtraData { get; set; }
     }
 }

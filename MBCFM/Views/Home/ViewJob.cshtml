@@ -50,32 +50,11 @@
         <label>Depature Time</label>
         <p class="half">@Model.JobData.Job.DepartureTime</p>
     </div>
-@if (Model.JobData.ExtraData != null)
-{
-    @*<div>
-        <label>Materials Used &amp; Costs</label>
-
-        <p class="half">@Model.JobData.ExtraData.MaterialsUsed</p>
-    </div>
-    <div>
-        <label>Materials Required</label>
-        <p class="half">@Model.JobData.ExtraData.MaterialsRequired</p>
-    </div>*@
-}
 
     <div>
         <label>Site Notes</label>
         <p class="">@Model.JobData.Job.siteNotes</p>
     </div>
-
-    @*<div class="half">
-        <label>Work Completed</label>
-
-    </div>
-    <div class="half">
-        <label>Duration Require to complete</label>
-        @*<p class="half">@Model.JobData.Job.DurationToCompletion</p>
-    </div>*@
     <span class="clearfix"></span>
 
     <div class="clearfix"></div>

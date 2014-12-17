@@ -19,24 +19,12 @@ namespace MBCFM.Models
             //(as we don't have a corresponding extradata row yet) we return an empty extra data object (the DefaultIfEmpty method)
             //we can then use that data in the select that creates a mergedJob object that can be used in the views
             return from j in db.Jobs
-                   join d in db.ExtraJobs on j.MbcJobNo equals d.MBCJobNo into dataGroup
-                   from data in dataGroup.DefaultIfEmpty()
                    select new MergedJob
                        {
-                           Job = j,
-                           ExtraData = data
+                           Job = j
                        };
         }
 
-        public static string ConvertDateTime(DateTime? dateTime)
-        {
-            if (!dateTime.HasValue)
-                return string.Empty;
-            else
-            {
-                return dateTime.Value.ToString("yyyy/MM/dd HH:mm");
-            }
-        }
 
         public static string GetUserType()
         {
@@ -64,16 +52,5 @@ namespace MBCFM.Models
                 return string.Empty;
         }
 
-        public static JobsContext AddExtraJobData(JobsContext db, ExtraJobData extraData, int mbcJobNo, bool notify) 
-        {
-            extraData = new ExtraJobData
-            {
-                MBCJobNo = mbcJobNo,
-                HelpDeskNotified = notify
-            };
-            db.ExtraJobs.Add(extraData);
-
-            return db;
-        }
     }
 }

@@ -8,8 +8,7 @@
     <ul class="job-list box">
         @foreach (var merged in Model.HelpdeskJobs)
         {
-            //we don't need this now as we can include the two seperate queries in the controller and filer result driectly in the query
-            //if (merged.ExtraData != null && merged.ExtraData.HelpDeskNotified.HasValue && merged.ExtraData.HelpDeskNotified.Value)
+
 
             <li>
                 <div class="priority"><span>Priority</span><span class="number">@merged.Job.Priority</span></div>
@@ -41,8 +40,6 @@ else
     <ul class="job-list box">
         @foreach (var merged in Model.OpenJobs)
         {
-            //see comment above
-            //if ((merged.ExtraData == null) || (merged.ExtraData.HelpDeskNotified.HasValue && !merged.ExtraData.HelpDeskNotified.Value))
             <li>
                 <div class="priority"><span>Priority</span><span class="number">@merged.Job.Priority</span></div>
 

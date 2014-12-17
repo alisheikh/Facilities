@@ -22,8 +22,7 @@ namespace MBCFM.Controllers
             using (var db = new JobsContext())
             {
                 var username = Helpers.GetUserName();
-                jobs = Helpers.GetMergedJobsQuery(db).Where(mj => mj.Job.UserName == username &&
-                    ((mj.ExtraData.HelpDeskNotified.HasValue && !mj.ExtraData.HelpDeskNotified.Value) || mj.ExtraData == null)
+                jobs = Helpers.GetMergedJobsQuery(db).Where(mj => mj.Job.UserName == username 
                     && !(mj.Job.CurrentStatus.ToLower() == "closed" || mj.Job.CurrentStatus.ToLower() == "resolved by engineer")).ToList();
             }
 
@@ -115,26 +114,6 @@ namespace MBCFM.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        public ActionResult SendToHelpdesk(int mbcJobNo)
-        {
-            using (var db = new JobsContext())
-            {
-                var extraData = db.ExtraJobs.Where(ed => ed.MBCJobNo == mbcJobNo).FirstOrDefault();
-                if (extraData == null)
-                {
-                    //doesn't exists so create a new entry
-                    Helpers.AddExtraJobData(db, extraData, mbcJobNo, true);
 
-                }
-                else
-                {
-                    //exists so update the field
-                    extraData.HelpDeskNotified = true;
-                }
-                db.SaveChanges();
-            }
-            return RedirectToAction("Index");
-        }
     }
 }

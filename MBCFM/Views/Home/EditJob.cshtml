@@ -58,26 +58,11 @@
                 <label>Depature Time</label>
                 <input type="text" class="dtpicker" name="departureTime" value="@Model.JobData.Job.DepartureTime" />
             </div>
-            @*<div>
-                <label>Materials Used &amp; Costs</label>
-                <textarea name="materialsUsed">@(Model.JobData.ExtraData != null ? Model.JobData.ExtraData.MaterialsUsed : string.Empty)</textarea>
-            </div>
-            <div>
-                <label>Materials Required</label>
-                <textarea name="materialsRequired">@(Model.JobData.ExtraData != null ? Model.JobData.ExtraData.MaterialsRequired : string.Empty)</textarea>
-            </div>*@
+
             <div>
                 <label>Site Notes</label>
                 <textarea name="siteNotes">@(Model.JobData.Job.siteNotes != null ? Model.JobData.Job.siteNotes : string.Empty)</textarea>
             </div>
-            @*<div class="half">
-                <label>Work Completed</label>
-
-            </div>*@
-            @*<div class="half">
-                <label>Duration Require to complete</label>
-                @*<input type="text" name="durationToCompletion" value="@Model.JobData.Job.DurationToCompletion">
-            </div>*@
             <span class="clearfix"></span>
 
         </div>

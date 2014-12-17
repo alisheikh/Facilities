@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBCFM.Models
 {
-    [Table("WebJobsJoined")] 
+    [Table("WebJobs")] 
     public class Job
     {
         [Key]
@@ -30,6 +30,5 @@ namespace MBCFM.Models
         public string DepartureTime { get; set; }
         public decimal? CostOfMaterials { get; set; }
         public string tableName { get; set; }
-        //public string DurationToCompletion { get; set; }
     }
 }
