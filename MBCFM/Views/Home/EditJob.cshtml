@@ -10,8 +10,10 @@
         <h1><span class="mbc-job-number">#@Model.JobData.Job.MbcJobNo</span> - <span class="job-title">@Model.JobData.Job.ClientName</span></h1>
     </div>
     <div class="details">
-        <div class="">
-            <p class="site-address"><span class="label">Site Address</span></p>
+        <div>
+    <section class="half">
+               <p> <strong>Site Address</strong> </p>
+
                <p> <span class="info">@Model.JobData.Job.siteName</span> </p>
             
             <p>  <span class="info">@Model.JobData.Job.siteAddress</span>  </p>
@@ -21,12 +23,16 @@
             <p>
                 <span class="info">@Model.JobData.Job.siteCounty</span>
         </p>
-            <br />
+            </section>
+        <section class="half">
 
             <p class="site-tel"><span class="label">Site Tel No</span><span class="info">@Model.JobData.Job.SitePhoneNo</span></p>
             <p class="order-type"><span class="label">Order Type</span><span class="info">@Model.JobData.Job.OrderType</span></p>
             <p class="order-status"><span class="label">Status</span><span class="info">@Model.JobData.Job.CurrentStatus</span></p>
-        </div>
+        </section>
+            <span class="clearfix"></span>
+    </div>
+
         <div>
             <p class="half">Sub Contractor <strong>@Model.User.FullName</strong></p>
             <p class="half">Entered by <strong>@Model.JobData.Job.EnteredBy</strong></p>
@@ -61,7 +67,7 @@
 
             <div>
                 <label>Site Notes</label>
-                <textarea name="siteNotes">@(Model.JobData.Job.siteNotes != null ? Model.JobData.Job.siteNotes : string.Empty)</textarea>
+                <textarea name="siteNotes" rows="12">@(Model.JobData.Job.siteNotes != null ? Model.JobData.Job.siteNotes : string.Empty)</textarea>
             </div>
             <span class="clearfix"></span>
 
@@ -70,16 +76,15 @@
         <div class="action">
             <button type="submit" class="button" name="update">Update</button>
         </div>
-    <div class="action">
-        <button type="submit" class="big button" name="resolve">
+    <div class="resolve">
+        <button type="submit" class="button" name="resolve">
             <h4>Resolve</h4>
             <p>Will close this job and send to Help Desk</p>
         </button>
     </div>
     }
-    <br/>
 
-    <div class="clearfix"></div>
+    <span class="clearfix"></span>
 </article>
 
 @section Scripts

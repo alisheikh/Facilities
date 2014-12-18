@@ -12,13 +12,11 @@ button,
 input,
 select,
 textarea {
-    color: #222;
-}
+  color: #222; }
 
 html {
   font-size: 1em;
-    line-height: 1.4;
-}
+  line-height: 1.4; }
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -27,13 +25,11 @@ html {
  */
 ::-moz-selection {
   background: #b3d4fc;
-    text-shadow: none;
-}
+  text-shadow: none; }
 
 ::selection {
   background: #b3d4fc;
-    text-shadow: none;
-}
+  text-shadow: none; }
 
 /*
  * A better looking default horizontal rule
@@ -44,8 +40,7 @@ hr {
   border: 0;
   border-top: 1px solid #ccc;
   margin: 1em 0;
-    padding: 0;
-}
+  padding: 0; }
 
 /*
  * Remove the gap between images, videos, audio and canvas and the bottom of
@@ -55,8 +50,7 @@ audio,
 canvas,
 img,
 video {
-    vertical-align: middle;
-}
+  vertical-align: middle; }
 
 /*
  * Remove default fieldset styles.
@@ -64,15 +58,13 @@ video {
 fieldset {
   border: 0;
   margin: 0;
-    padding: 0;
-}
+  padding: 0; }
 
 /*
  * Allow only vertical resizing of textareas.
  */
 textarea {
-    resize: vertical;
-}
+  resize: vertical; }
 
 /* ==========================================================================
    Browse Happy prompt
@@ -81,15 +73,16 @@ textarea {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
-    padding: 0.2em 0;
-}
+  padding: 0.2em 0; }
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+h1 {
+  font-size: 1.5em; }
+
 h4 {
-    margin: 1em 0 0 0;
-}
+  margin: 1em 0 0 0; }
 
 .button {
   display: inline-block;
@@ -127,168 +120,160 @@ h4 {
   width: auto;
   font-size: 0.9em;
   margin: 1em 0 1em 0;
-    font-weight: bold;
-}
+  font-weight: bold; }
 
 .big.button {
   display: block;
-    margin: 0 1em;
-}
+  margin: 0 1em; }
 
 .button h4 {
   margin: 0.2em;
-    font-size: 2em;
-}
+  font-size: 2em; }
 
 header {
   width: 100%;
   float: left;
   background: #000;
   color: #FFF;
-    margin: 0 0 1em 0;
-}
+  margin: 0 0 1em 0;
+  padding: 0 0 1em 0; }
 
 .wrapper {
   width: 90%;
   padding: 1em 5%;
   clear: both;
   margin: 0 auto;
-    max-width: 1000px;
-}
+  max-width: 1000px; }
 
 nav {
   float: left;
-    width: 35%;
-}
+  width: 35%;
+  padding: 0 0 0 5%; }
+  nav li {
+    line-height: 46px;
+    float: left;
+    padding: 0 1em 0 0; }
+  nav a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2em; }
 
 .logo {
-  float: left;
-    text-align: center;
-}
-
-.mainTabs ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.mainTabs li {
-    display: inline;
-    margin-right: 5px;
-}
+  float: left; }
 
 .user {
   float: right;
   width: 35%;
   text-align: right;
-  font-size:10px;
-}
+  font-size: 0.8em; }
+  .user a {
+    color: #fff; }
+  .user .account-actions {
+    font-size: 0.9em; }
 
 .header {
   padding: 0.5em;
   background: #000;
   color: #FFC20F;
-    margin: 0;
-}
+  margin: 0; }
+
+.field-validation-error {
+  color: red;
+  margin: 0.3em; }
+
+.login {
+  max-width: 300px;
+  margin: 0 auto; }
+
+.input-group {
+  margin: 0 0 1em 0; }
 
 ul {
   padding: 0;
   margin: 0;
-    list-style: none;
-}
+  list-style: none; }
 
 .box {
   border: 1px solid #ccc;
-    clear: both;
-}
+  clear: both; }
 
 .job-list li {
-  padding: 1em;
-    border-bottom: 1px solid #ccc;
-}
+  padding: 1em 1em 1em 0;
+  border-bottom: 1px solid #ccc; }
+  .job-list li .action {
+    text-align: right;
+    border: 0; }
 
 .priority {
   float: left;
   width: 10%;
-    text-align: center;
-}
+  padding: 1em 1em 0 0;
+  text-align: center; }
 
 .priority .number {
   clear: both;
   display: block;
   font-weight: bold;
-        font-size: 1.5em;
-    }
+  font-size: 1.5em; }
 
 .job-details {
   float: left;
-    width: 65%;
-}
+  width: 65%; }
 
 h1 {
-    margin: 0;
-}
+  margin: 0; }
 
 p {
   margin: 0;
-    padding: 0;
-}
+  padding: 0; }
 
 .label {
-  width: 15%;
-    display: inline-block;
-}
-
-.action {
-    text-align: right;
-}
-
-  .action .button {
-        font-size: 1.5em;
-    }
+  width: 40%;
+  display: inline-block; }
 
 .half {
   float: left;
-    width: 50%;
-}
+  width: 50%; }
 
 .job-view {
-    position: relative;
-}
-
+  position: relative; }
   .job-view div {
     padding: 1em;
-        box-sizing: border-box;
-    }
-
+    box-sizing: border-box; }
   .job-view .priority {
     right: 0px;
     top: 0px;
-        position: absolute;
-    }
-
+    position: absolute; }
   .job-view .details {
     background: #EEEEEE;
     border-top: 1px solid #ccc;
     border-bottom: 5px solid #ccc;
-        padding: 0;
-    }
-
+    padding: 0; }
     .job-view .details div {
       padding: 1em;
-            border-bottom: 1px solid #ccc;
-        }
+      border-bottom: 1px solid #ccc; }
 
 .job-view .form {
   padding: 0;
-        border-bottom: 1px solid #ccc;
-    }
+  border-bottom: 1px solid #ccc; }
+
+.action {
+  text-align: center;
+  border-bottom: 1px solid #ccc; }
+  .action .button {
+    font-size: 1.5em; }
+
+.resolve {
+  padding: 1em 0;
+  background: #EEEEEE; }
+  .resolve .button {
+    width: 100%; }
 
 label {
   display: block;
   width: 100%;
-    font-weight: bold;
-}
+  font-weight: bold; }
 
 input, textarea {
   display: block;
@@ -296,8 +281,10 @@ input, textarea {
   padding: 0.5em;
   box-sizing: border-box;
   border: 1px solid #ccc;
-    background: white;
-}
+  background: white; }
+
+table {
+  width: 100%; }
 
 /* ==========================================================================
    Helper classes
@@ -310,23 +297,20 @@ input, textarea {
   border: 0;
   overflow: hidden;
   /* IE 6/7 fallback */
-    *text-indent: -9999px;
-}
+  *text-indent: -9999px; }
 
 .ir:before {
   content: "";
   display: block;
   width: 0;
-        height: 150%;
-    }
+  height: 150%; }
 
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
 .hidden {
   display: none !important;
-    visibility: hidden;
-}
+  visibility: hidden; }
 
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
@@ -339,8 +323,7 @@ input, textarea {
   overflow: hidden;
   padding: 0;
   position: absolute;
-    width: 1px;
-}
+  width: 1px; }
 
 /*
  * Extends the .visuallyhidden class to allow the element to be focusable
@@ -353,15 +336,13 @@ input, textarea {
   margin: 0;
   overflow: visible;
   position: static;
-        width: auto;
-    }
+  width: auto; }
 
 /*
  * Hide visually and from screenreaders, but maintain layout
  */
 .invisible {
-    visibility: hidden;
-}
+  visibility: hidden; }
 
 /*
  * Clearfix: contain floats
@@ -379,20 +360,17 @@ input, textarea {
   content: " ";
   /* 1 */
   display: table;
-    /* 2 */
-}
+  /* 2 */ }
 
 .clearfix:after {
-    clear: both;
-}
+  clear: both; }
 
 /*
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
 .clearfix {
-    *zoom: 1;
-}
+  *zoom: 1; }
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
@@ -400,12 +378,9 @@ input, textarea {
    Modify as content requires.
    ========================================================================== */
 @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
+  /* Style adjustments for viewports that meet the condition */ }
 @media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
+  /* Style adjustments for high resolution devices */ }
 /* ==========================================================================
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r
@@ -416,21 +391,17 @@ input, textarea {
     color: #000 !important;
     /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
-        text-shadow: none !important;
-    }
+    text-shadow: none !important; }
 
   a,
   a:visited {
-        text-decoration: underline;
-    }
+    text-decoration: underline; }
 
   a[href]:after {
-            content: " (" attr(href) ")";
-        }
+    content: " (" attr(href) ")"; }
 
   abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+    content: " (" attr(title) ")"; }
 
   /*
    * Don't show links for images, or javascript/internal links
@@ -438,57 +409,32 @@ input, textarea {
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
-        content: "";
-    }
+    content: ""; }
 
   pre,
   blockquote {
     border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+    page-break-inside: avoid; }
 
   thead {
     display: table-header-group;
-        /* h5bp.com/t */
-    }
+    /* h5bp.com/t */ }
 
   tr,
   img {
-        page-break-inside: avoid;
-    }
+    page-break-inside: avoid; }
 
   img {
-        max-width: 100% !important;
-    }
+    max-width: 100% !important; }
 
   @page {
-        margin: 0.5cm;
-    }
-
+    margin: 0.5cm; }
   p,
   h2,
   h3 {
     orphans: 3;
-        widows: 3;
-    }
+    widows: 3; }
 
   h2,
   h3 {
-        page-break-after: avoid;
-    }
-}
-
-.field-validation-error {
-    color: red;
-    margin: 0.3em;
-}
-
-.login {
-    width: 50%;
-    margin: 0 auto;
-}
-
-.input-group{
-    margin:1em;
-}
-
+    page-break-after: avoid; } }

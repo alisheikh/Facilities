@@ -8,23 +8,30 @@
         <h1><span class="mbc-job-number">#@Model.JobData.Job.MbcJobNo</span> - <span class="job-title">@Model.JobData.Job.ClientName</span></h1>
     </div>
     <div class="details">
-        <div class="">
-            <p class="site-address"><span class="label">Site Address</span></p>
-            <p> <span class="info">@Model.JobData.Job.siteName</span> </p>
+        <div>
+    <section class="half">
+               <p> <strong>Site Address</strong> </p>
 
+               <p> <span class="info">@Model.JobData.Job.siteName</span> </p>
+            
             <p>  <span class="info">@Model.JobData.Job.siteAddress</span>  </p>
             <p>
                 <span class="info">@Model.JobData.Job.siteTown</span>
-            </p>
+        </p>
             <p>
                 <span class="info">@Model.JobData.Job.siteCounty</span>
-            </p>
-            <br />
+        </p>
+            </section>
+        <section class="half">
 
             <p class="site-tel"><span class="label">Site Tel No</span><span class="info">@Model.JobData.Job.SitePhoneNo</span></p>
             <p class="order-type"><span class="label">Order Type</span><span class="info">@Model.JobData.Job.OrderType</span></p>
             <p class="order-status"><span class="label">Status</span><span class="info">@Model.JobData.Job.CurrentStatus</span></p>
-        </div>
+        </section>
+            <span class="clearfix"></span>
+    </div>
+
+    
         <div>
             <p class="half">Sub Contractor <strong>@Model.JobData.Job.UserName</strong></p>
             <p class="half">Entered by <strong>@Model.JobData.Job.EnteredBy</strong></p>

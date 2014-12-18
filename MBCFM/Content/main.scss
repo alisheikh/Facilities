@@ -158,6 +158,11 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+h1 {
+  font-size: 1.5em;
+}
+
 h4 {
     margin: 1em 0 0 0;
 }
@@ -191,6 +196,8 @@ header {
     background: #000;
     color: #FFF;
     margin: 0 0 1em 0;
+    padding: 0 0 1em 0;
+
 }
 
 .wrapper {
@@ -204,17 +211,40 @@ header {
 nav {
     float: left;
     width: 35%;
+    padding: 0 0 0 5%;
+
+    li {
+      line-height: 46px;
+      float: left;
+      padding: 0 1em 0 0;
+    }
+    
+    a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
 }
 
 .logo {
     float: left;
-    text-align: center;
 }
 
 .user {
     float: right;
     width: 35%;
     text-align: right;
+    font-size: 0.8em;
+
+
+    a {
+      color: #fff;
+    }
+
+    .account-actions {
+      font-size: 0.9em;
+    }
 }
 
 
@@ -224,6 +254,21 @@ nav {
     color: #FFC20F;
     margin: 0;
 }
+
+.field-validation-error {
+    color: red;
+    margin: 0.3em;
+}
+
+.login {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.input-group{
+    margin: 0 0 1em 0;
+}
+
 
 ul {
     padding: 0;
@@ -237,14 +282,20 @@ ul {
 }
 
 .job-list li {
-    padding: 1em;
+    padding: 1em 1em 1em 0;
     border-bottom: 1px solid #ccc;
+
+    .action {
+      text-align: right;
+      border: 0;
+    }
 
 }
 
 .priority {
     float: left;
     width: 10%;
+    padding: 1em 1em 0 0;
     text-align: center;
 }
 
@@ -270,19 +321,13 @@ ul {
     }
 
     .label {
-        width: 15%;
+        width: 40%;
         display: inline-block;
     }
 
 
 
-.action {
-    text-align: right;
 
-.button {
-    font-size: 1.5em;
-}
-}
 
 
 .half {
@@ -329,6 +374,25 @@ ul {
             border-bottom: 1px solid #ccc;
 }
 
+.action {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+
+    .button {
+        font-size: 1.5em;
+    }
+}
+
+.resolve {
+    padding: 1em 0;
+    background: #EEEEEE;
+
+    .button {
+    width: 100%;
+
+  }
+}
+
 label {
     display: block;
     width: 100%;
@@ -345,6 +409,10 @@ input, textarea {
 
 }
 
+
+table {
+  width: 100%;
+}
 
 
 /* ==========================================================================
