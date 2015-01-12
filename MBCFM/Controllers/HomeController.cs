@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Net.Mail;
 
 namespace MBCFM.Controllers
 {
@@ -51,6 +52,14 @@ namespace MBCFM.Controllers
         public ActionResult EditJob(int mbcJobNo, string arrivalTime, string departureTime, string materialsUsed, string costOfMaterials, string materialsRequired, string siteNotes, string tableName)
         //public ActionResult EditJob(int mbcJobNo, DateTime? arrivalTime, DateTime? departureTime, string materialsUsed, string costsOfMaterials, string materialsRequired, string durationToCompletion, string siteNotes)
         {
+            MailMessage mail = new MailMessage("administrator@marshallcdp.com", "facilities@marshallbuildingcontractors.com"); // these are 'from' and 'to'
+            SmtpClient client = new SmtpClient();
+            client.Port = 25;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+            client.Host = "mhlexchange.marshall.local"; // put your smtp server details here: e.g. smtp.gmail.com
+            string mailSubject = "A job has updated but not resolved.";
+
             using (var db = new JobsContext())
             {
                 var job = db.Jobs.Where(j => j.MbcJobNo == mbcJobNo).FirstOrDefault();
@@ -61,20 +70,26 @@ namespace MBCFM.Controllers
                         " set siteNotes = '" + siteNotes + "'" +
                         " ,timeOnSite = '" + arrivalTime + "'" +
                         " ,timeOffSite = '" + departureTime + "'" + 
-
                         "where [MBC Job No] = " +  mbcJobNo);
-
                 }
             
 
                 if (Request.Form["resolve"] != null)
                 {
 
+                    mailSubject = "A job has updated AND resolved.";
+
                 db.Database.ExecuteSqlCommand("update " + tableName +
                         " set currentStatus = 'Resolved by Engineer'" +
                         "where [MBC Job No] = " + mbcJobNo);
                 }
             }
+
+             mail.Subject = mbcJobNo + " " + mailSubject;
+            mail.Body = "Please see the information related to the subject job";
+            client.Send(mail);
+
+           
 
             return RedirectToAction("Index");
         }
