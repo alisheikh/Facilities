@@ -236,6 +236,16 @@ p {
   float: left;
   width: 50%; }
 
+.third {
+    float: left;
+    width: 30%; 
+    padding-right: 10px;
+}
+
+.map-canvas {
+    width: 500px;
+    height: 400px; }
+
 .job-view {
   position: relative; }
   .job-view div {
