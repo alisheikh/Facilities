@@ -5,11 +5,11 @@
     <div class="priority"><span>Priority</span><span class="number">@Model.JobData.Job.Priority</span></div>
     <div class="title">
         <p class="client-job-number">Client Job # <span class="number">@Model.JobData.Job.ClientJobNo</span></p>
-        <h1><span class="mbc-job-number">#@Model.JobData.Job.MbcJobNo</span> - <span class="job-title">@Model.JobData.Job.ClientName</span></h1>
+        <h1><span class="mbc-job-number">#@Model.JobData.Job.MbcJobNo</span> - <span class="job-title">@Model.JobData.Job.ClientName</span> <span class="site-name">@Model.JobData.Job.siteName</span></h1>
     </div>
     <div class="details">
         <div>
-    <section class="half">
+        <section class="third">
                <p> <strong>Site Address</strong> </p>
 
                <p> <span class="info">@Model.JobData.Job.siteName</span> </p>
@@ -21,16 +21,118 @@
             <p>
                 <span class="info">@Model.JobData.Job.siteCounty</span>
         </p>
-            </section>
-        <section class="half">
-
-            <p class="site-tel"><span class="label">Site Tel No</span><span class="info">@Model.JobData.Job.SitePhoneNo</span></p>
-            <p class="order-type"><span class="label">Order Type</span><span class="info">@Model.JobData.Job.OrderType</span></p>
-            <p class="order-status"><span class="label">Status</span><span class="info">@Model.JobData.Job.CurrentStatus</span></p>
+            <br />
+            <p class="site-tel"><span class="label"><strong>Site Tel No</strong></span><span class="info">@Model.JobData.Job.SitePhoneNo</span></p>
+            <p class="order-type"><span class="label"><strong>Order Type</strong></span><span class="info">@Model.JobData.Job.OrderType</span></p>
+            <p class="order-status"><span class="label"><strong>Status</strong></span><span class="info">@Model.JobData.Job.CurrentStatus</span></p>
         </section>
-            <span class="clearfix"></span>
-    </div>
 
+        <section class="third">
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmkFCgEnkakI3Zr5YDr_lq6jZy5mwVqH4"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+            <script>
+                    function calculateRoute(from, to) {
+                        // Center initialized to Head Office
+                        var myOptions = {
+                            zoom: 10,
+                            center: new google.maps.LatLng(53.6818026, -1.8329152),
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        };
+                        // Draw the map
+                        var mapObject = new google.maps.Map(document.getElementById("map"), myOptions);
+
+                        var directionsService = new google.maps.DirectionsService();
+                        var directionsRequest = {
+                            origin: from,
+                            destination: to,
+                            travelMode: google.maps.DirectionsTravelMode.DRIVING,
+                            unitSystem: google.maps.UnitSystem.METRIC
+                        };
+                        directionsService.route(
+                                                  directionsRequest,
+                                                  function (response, status) {
+                                                      if (status == google.maps.DirectionsStatus.OK) {
+                                                          new google.maps.DirectionsRenderer({
+                                                              map: mapObject,
+                                                              directions: response
+                                                          });
+                                                      }
+                                                      else
+                                                          $("#error").append("Unable to retrieve your route<br />");
+                                                  }
+                                                        );
+                    }
+
+                    $(document).ready(function () {
+                        // If the browser supports the Geolocation API
+                        if (typeof navigator.geolocation == "undefined") {
+                            $("#error").text("Your browser doesn't support the Geolocation API");
+                            return;
+                        }
+
+                        $("#from-link, #to-link").click(function (event) {
+                            event.preventDefault();
+                            var addressId = this.id.substring(0, this.id.indexOf("-"));
+
+                            navigator.geolocation.getCurrentPosition(function (position) {
+                                var geocoder = new google.maps.Geocoder();
+                                geocoder.geocode({
+                                    "location": new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+                                },
+                                function (results, status) {
+                                    if (status == google.maps.GeocoderStatus.OK)
+                                        $("#" + addressId).val(results[0].formatted_address);
+                                    else
+                                        $("#error").append("Unable to retrieve your address<br />");
+                                });
+                            },
+                            function (positionError) {
+                                $("#error").append("Error: " + positionError.message + "<br />");
+                            },
+                            {
+                                enableHighAccuracy: true,
+                                timeout: 10 * 1000 // 10 seconds
+                            });
+                        });
+
+                        $("#calculate-route").submit(function (event) {
+                            event.preventDefault();
+                            calculateRoute($("#from").val(), $("#to").val());
+                        });
+                    });
+        </script>
+
+        <style type="text/css">
+            #map {
+                    width: 380px;
+                    height: 250px;
+                    margin-top: 10px; }
+        </style>
+            <strong>Calculate your route</strong>
+            <form id="calculate-route" name="calculate-route" action="#" method="get">
+                <small><label for="from">From:</label></small>
+                <input type="text" id="from" name="from" required="required" placeholder="An address" size="15" />
+                <small><a id="from-link" href="#">Get my position</a></small>
+                <br />
+
+                <small><label for="to">To:</label></small>
+                <!--<input type="text" value="@Model.JobData.Job.siteName" required="required" placeholder="Another address" size="15" /> -->
+                <input type="text" id="to" name="to" required="required" placeholder="Another address" size="15" />
+                <!-- <a id="to-link" href="#">Get my position</a> -->
+                <br />
+
+                <input type="submit" />
+                <input type="reset" />
+            </form>
+        </section>
+
+        <section class="third">
+            <div id="map"></div>
+            <p id="error"></p>
+        </section>
+
+        <span class="clearfix"></span>
+        </div>
     
         <div>
             <p class="half">Sub Contractor <strong>@Model.JobData.Job.UserName</strong></p>
