@@ -1,6 +1,6 @@
 ﻿@model MBCFM.Models.JobView
 
-<article class="job-view box">
+   <article class="job-view box">
 
     <div class="priority"><span>Priority</span><span class="number">@Model.JobData.Job.Priority</span></div>
     <div class="title">
@@ -9,7 +9,7 @@
     </div>
     <div class="details">
         <div>
-        <section class="third">
+        <section class="half">
                <p> <strong>Site Address</strong> </p>
 
                <p> <span class="info">@Model.JobData.Job.siteName</span> </p>
@@ -27,7 +27,7 @@
             <p class="order-status"><span class="label"><strong>Status</strong></span><span class="info">@Model.JobData.Job.CurrentStatus</span></p>
         </section>
 
-        <section class="third">
+        <section class="half">
             <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmkFCgEnkakI3Zr5YDr_lq6jZy5mwVqH4"></script>
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
             <script>
@@ -102,31 +102,23 @@
                     });
         </script>
 
-        <style type="text/css">
-            #map {
-                    width: 380px;
-                    height: 250px;
-                    margin-top: 10px; }
-        </style>
             <strong>Calculate your route</strong>
             <form id="calculate-route" name="calculate-route" action="#" method="get">
                 <small><label for="from">From:</label></small>
-                <input type="text" id="from" name="from" required="required" placeholder="An address" size="15" />
+                <input type="text" id="from" name="from" required="required" placeholder="Where you are (Address)" size="15" />
                 <small><a id="from-link" href="#">Get my position</a></small>
                 <br />
 
                 <small><label for="to">To:</label></small>
-                <!--<input type="text" value="@Model.JobData.Job.siteName" required="required" placeholder="Another address" size="15" /> -->
-                <input type="text" id="to" name="to" required="required" placeholder="Another address" size="15" />
-                <!-- <a id="to-link" href="#">Get my position</a> -->
-                <br />
+                <input type="text" id="to" name="to" required="required" placeholder="Going to (Address)" size="15" value="@Model.JobData.Job.siteAddress @Model.JobData.Job.siteTown @Model.JobData.Job.siteCounty"/>
+                
 
-                <input type="submit" />
-                <input type="reset" />
+                <input class="sumit-map button" type="submit" value="Get Directions" />
+                <input class="reset" type="reset" />
             </form>
         </section>
 
-        <section class="third">
+        <section class="map">
             <div id="map"></div>
             <p id="error"></p>
         </section>
